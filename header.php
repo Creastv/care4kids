@@ -16,7 +16,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header class="site-header">
-        <div class="container site-header__inner">
+        <div class="container site-header__inner grid grid-12 grid-noBottom grid-middle">
             <?php get_template_part('templates-parts/header/h', 'brand'); ?>
             <?php get_template_part('templates-parts/header/h', 'nav'); ?>
             <?php get_template_part('templates-parts/header/h', 'buttons'); ?>

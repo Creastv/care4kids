@@ -1,0 +1,262 @@
+@use "./variable" as *;
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Indie Flower";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IndieFlower-Regular.ttf") format("truetype");
+}
+
+$font-family-base: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+$font-family-heading: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+$line-height-tight: 1.2;
+$line-height-regular: 1.5;
+$line-height-relaxed: 1.75;
+
+$font-size-root: 16px;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+
+@mixin fluid-type(
+  $min,
+  $max,
+  $viewport-min: $breakpoint-xs,
+  $viewport-max: $breakpoint-xxl
+) {
+  font-size: clamp(
+    $min,
+    calc(
+      #{$min} + (#{$max} - #{$min}) * ((100vw - #{$viewport-min}) /
+            (#{$viewport-max} - #{$viewport-min}))
+    ),
+    $max
+  );
+}
+
+@mixin heading-style($weight, $line-height: $line-height-tight) {
+  font-family: $font-family-heading;
+  font-weight: $weight;
+  line-height: $line-height;
+  margin: 0 0 $space-4;
+  color: $color-text;
+}
+
+html {
+  font-size: $font-size-root;
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  line-height: $line-height-regular;
+  color: $color-text;
+  background-color: $color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  margin: 0 0 $space-5;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  font-weight: $font-weight-medium;
+}
+
+.lead {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+}
+
+.eyebrow {
+  font-family: $font-family-heading;
+  font-size: $font-size-xs;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: $space-2;
+  color: $color-secondary;
+}
+
+h1,
+.h1 {
+  @include heading-style($font-weight-bold);
+  @include fluid-type(2.5rem, 3.5rem);
+}
+
+h2,
+.h2 {
+  @include heading-style($font-weight-bold);
+  @include fluid-type(2rem, 3rem);
+}
+
+h3,
+.h3 {
+  @include heading-style($font-weight-bold);
+  @include fluid-type(1.75rem, 2.5rem);
+}
+
+h4,
+.h4 {
+  @include heading-style($font-weight-bold, $line-height-regular);
+  @include fluid-type(1.5rem, 2rem);
+}
+
+h5,
+.h5 {
+  @include heading-style($font-weight-bold, $line-height-regular);
+  font-size: $font-size-xl;
+}
+
+h6,
+.h6 {
+  @include heading-style($font-weight-bold, $line-height-regular);
+  font-size: $font-size-lg;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+small,
+.text-sm {
+  font-size: $font-size-sm;
+  line-height: $line-height-regular;
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-regular;
+}
+
+.text-lg {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+}
+
+.text-xl {
+  font-size: $font-size-xl;
+  line-height: $line-height-relaxed;
+}
+
+ul,
+ol {
+  margin: 0 0 $space-5 $space-5;
+  padding: 0;
+  line-height: $line-height-relaxed;
+}
+
+ul {
+  list-style: disc outside;
+}
+
+ol {
+  list-style: decimal outside;
+}
+
+blockquote {
+  margin: 0 0 $space-6;
+  padding-left: $space-4;
+  border-left: 4px solid rgba($color-primary, 0.2);
+  font-style: italic;
+  color: rgba($color-text, 0.85);
+}
+
+a {
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: $color-secondary;
+    // text-decoration: underline;
+  }
+}
+
+code,
+pre {
+  font-family: "SFMono-Regular", "SFMono", "Roboto Mono", "Fira Code", monospace;
+  font-size: 0.95em;
+  background-color: rgba($color-background-alt, 0.7);
+  border-radius: 6px;
+}
+
+code {
+  padding: 0.15em 0.4em;
+}
+
+pre {
+  padding: $space-4;
+  overflow-x: auto;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+@media (max-width: $breakpoint-sm) {
+  blockquote {
+    padding-left: $space-3;
+  }
+
+  ul,
+  ol {
+    margin-left: $space-4;
+  }
+}

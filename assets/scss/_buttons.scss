@@ -1,0 +1,93 @@
+@use "./variable" as *;
+@use "./typo" as typo;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: 3.75rem;
+  background-color: transparent;
+  font-family: typo.$font-family-base;
+  font-weight: typo.$font-weight-bold;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+  &.is-disabled,
+  &[disabled],
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.1875rem rgba($color-primary, 0.4);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.3);
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+    &:focus {
+      box-shadow: 0 0 0 0.1875rem rgba($color-primary, 0.4);
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+    }
+    &:active {
+      background-color: $color-primary;
+      color: #fff;
+      border: 1px solid $color-primary;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.4);
+    }
+
+    &.is-disabled,
+    &[disabled],
+    &.disabled {
+      background-color: rgba($color-primary, 0.4);
+      color: rgba(20, 20, 20, 0.6);
+      box-shadow: none;
+    }
+  }
+
+  &--white {
+    background-color: #fff;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #fff;
+      border: 1px solid $color-primary;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 0.1875rem rgba($color-primary, 0.2);
+    }
+
+    &.is-disabled,
+    &[disabled],
+    &.disabled {
+      background-color: rgba(20, 20, 20, 0.2);
+      color: rgba(20, 20, 20, 0.6);
+      box-shadow: none;
+    }
+  }
+}

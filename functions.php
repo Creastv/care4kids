@@ -42,6 +42,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus(
         [
             'primary' => __('Primary Menu', 'care4kids'),
+            'footer_info' => __('Footer Info Menu', 'care4kids'),
         ]
     );
 });
@@ -71,5 +72,43 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 });
+
+add_filter('nav_menu_css_class', function ($classes, $item, $args, $depth) {
+    if (($args->theme_location ?? '') !== 'primary') {
+        return $classes;
+    }
+
+    $classes = array_filter((array) $classes);
+
+    if ($depth === 0) {
+        $classes[] = 'header-nav__item';
+    } else {
+        $classes[] = 'header-nav__sub-item';
+    }
+
+    return array_unique($classes);
+}, 10, 4);
+
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
+    if (($args->theme_location ?? '') !== 'primary') {
+        return $atts;
+    }
+
+    $existing_class = $atts['class'] ?? '';
+    $atts['class']  = trim($existing_class . ' header-nav__link');
+
+    return $atts;
+}, 10, 4);
+
+add_filter('nav_menu_submenu_css_class', function ($classes, $args, $depth) {
+    if (($args->theme_location ?? '') !== 'primary') {
+        return $classes;
+    }
+
+    $classes   = array_filter((array) $classes);
+    $classes[] = 'header-nav__sub-list';
+
+    return array_unique($classes);
+}, 10, 3);
 
 require_once CARE4KIDS_THEME_DIR . '/functions/wp-customization.php';

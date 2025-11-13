@@ -57,14 +57,9 @@ function serve(done) {
   done();
 }
 
-function reload(done) {
-  browserSync.reload();
-  done();
-}
-
 function watchFiles() {
   watch(paths.styles.watch, compileStyles);
-  watch([paths.php, paths.js]).on('change', reload);
+  watch([paths.php, paths.js]).on('change', browserSync.reload);
 }
 
 const build = series(compileStyles);
