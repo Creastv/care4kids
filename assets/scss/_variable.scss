@@ -22,9 +22,9 @@ $space-8: 4rem;
 $container-max-width: 1680px;
 $container-width: 1120px;
 
-$breakpoint-xs: 360px;
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
+$breakpoint-xs: 576px; // 36em
+$breakpoint-sm: 768px; // 48em
+$breakpoint-md: 1024px; // 64em
+$breakpoint-lg: 1280px; // 80em
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1440px;

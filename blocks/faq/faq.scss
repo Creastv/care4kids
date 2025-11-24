@@ -1,0 +1,143 @@
+@use "../../assets/scss/variable" as *;
+
+.faq__wraper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  // gap: 20px;
+  @media (max-width: $breakpoint-sm) {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .col {
+    // width: calc(50%);
+    flex: 1;
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+    }
+    &:nth-child(1) {
+      padding-right: 10px;
+      @media (max-width: $breakpoint-sm) {
+        padding-right: 0px;
+      }
+    }
+    &:nth-child(2) {
+      padding-left: 10px;
+      @media (max-width: $breakpoint-sm) {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+.faq {
+  .accordion {
+    // margin-bottom: 24px;
+    // margin-top: -2px;
+    // border: 2px solid $color-text;
+    background-color: $color-background;
+    border-radius: 6px;
+    overflow: hidden;
+    // margin-bottom: 10px;
+    margin-bottom: $space-4;
+    padding: $space-3 $space-4;
+    .question {
+      font-size: 1.25em;
+      line-height: 1.625em;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      margin-bottom: 0px;
+      // min-height: 75px;
+      cursor: pointer;
+      transition: all 0.3s;
+      @media (max-width: $breakpoint-sm) {
+        font-size: 1em;
+        line-height: 1.625em;
+      }
+      span {
+        width: 100%;
+        padding: 10px 50px 10px 20px;
+        position: relative;
+        &:after {
+          content: "+";
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: 15px;
+          display: block;
+          font-size: 1.375em !important;
+          color: $color-text;
+        }
+      }
+      svg {
+        position: absolute;
+        right: 15px;
+        width: 16px;
+        pointer-events: none;
+      }
+    }
+    .answer {
+      border-radius: 6px;
+      height: 0;
+      overflow: hidden;
+      .wrap-video {
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+        iframe {
+          border: 0;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .accordion.active {
+    background-color: #f6f6f6;
+    background-color: rgba(259, 259, 259, 1);
+    border: 2px solid $color-primary;
+    border-radius: 6px;
+    margin-top: 0px;
+    position: relative;
+    z-index: 2;
+    .question {
+      //   border-bottom: 1px solid $primary-da;
+      svg {
+        transform: rotate(180deg);
+      }
+      span {
+        &:after {
+          content: "-";
+        }
+      }
+    }
+    .answer {
+      height: auto;
+      padding: 0 24px 24px;
+    }
+  }
+  ul {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    @media (max-width: $breakpoint-lg) {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+  }
+}
+
+.hight-contrast {
+  .faq .accordion {
+    border-color: $color-text;
+  }
+  .accordion.active {
+    background-color: $color-primary;
+  }
+}

@@ -1,0 +1,230 @@
+@use "../../assets/scss/variable" as *;
+
+.b-steps {
+  //   padding: 60px 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  &__item {
+    position: relative;
+    min-height: 414px;
+
+    // Connecting line between steps (desktop only, 3-column layout)
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 50%;
+      left: 80%;
+      top: 30px;
+      border-top: 2px dashed rgba($color-text, 0.2);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    // Hide connecting line on last item in row (when grid wraps)
+    &:nth-child(3n)::after {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+    min-height: 330px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 500px;
+    padding: 5px 23px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+
+    // &--primary {
+    //   background-color: $color-primary;
+
+    //   span {
+    //     color: $color-background;
+    //   }
+    // }
+
+    // &:not(&--primary) {
+    //   background-color: $color-background;
+    //   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
+
+    //   span {
+    //     color: $color-text;
+    //   }
+    // }
+    background-color: $color-background;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
+
+    span {
+      color: $color-text;
+    }
+
+    span {
+      font-family: "Satoshi", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.4;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    flex: 1;
+  }
+
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.4;
+    color: $color-text;
+    margin: 0;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__desc {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba($color-text, 0.8);
+    margin: 0;
+    max-width: 280px;
+  }
+
+  // &__button {
+  //   display: inline-flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   gap: 10px;
+  //   padding: 14px 28px;
+  //   border-radius: 60px;
+  //   border: 1px solid;
+  //   font-family: "Satoshi", sans-serif;
+  //   font-weight: 700;
+  //   font-size: 16px;
+  //   line-height: normal;
+  //   text-decoration: none;
+  //   transition: all 0.3s ease;
+  //   white-space: nowrap;
+  //   cursor: pointer;
+  //   flex-shrink: 0;
+
+  //   &--primary {
+  //     border-color: $color-primary;
+  //     color: $color-text;
+
+  //     &:hover {
+  //       background-color: $color-primary;
+  //       color: $color-background;
+  //       transform: translateY(-2px);
+  //     }
+  //   }
+
+  //   &:not(&--primary) {
+  //     border-color: rgba($color-text, 0.2);
+  //     color: rgba($color-text, 0.6);
+
+  //     &:hover {
+  //       border-color: $color-primary;
+  //       color: $color-text;
+  //       transform: translateY(-2px);
+  //     }
+  //   }
+  // }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 40px 0;
+
+    &__grid {
+      // grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    &__item {
+      min-height: auto;
+
+      // Hide connecting lines on mobile
+      &::after {
+        display: none;
+      }
+    }
+
+    &__content {
+      min-height: auto;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 32px 0;
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__top {
+      gap: 24px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__desc {
+      font-size: 14px;
+    }
+
+    &__button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+}
+
+// Admin preview styles
+.acf-block-preview {
+  .b-steps {
+    border: 1px dashed rgba($color-primary, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+  }
+}

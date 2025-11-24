@@ -1,0 +1,155 @@
+@use "../../assets/scss/variable" as *;
+
+.b-banner {
+  background-color: $color-primary;
+  border-radius: 20px;
+  // padding: 60px 80px 68px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &__ornament {
+    position: absolute;
+    z-index: 1;
+    max-width: 50%;
+    top: -50%;
+    right: 0%;
+    @media (max-width: $breakpoint-sm) {
+      top: initial;
+      bottom: 0;
+      max-width: 100%;
+    }
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // width: 100%;
+    // height: 100%;
+    width: 50%;
+    // height: 100%;
+    position: relative;
+    align-self: stretch;
+
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+      min-height: 300px;
+    }
+    img {
+      position: absolute;
+      left: -10%;
+      top: 30px;
+      z-index: 2;
+      width: 130%;
+      height: 130%;
+      object-fit: contain;
+      // object-fit: cover;
+      @media (max-width: $breakpoint-sm) {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    // max-width: 461px;
+    padding: 40px 0px 40px 40px;
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+      padding: 20px 20px 20px 20px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.24;
+    color: #ffffff;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__desc {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    @media (max-width: $breakpoint-sm) {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 60px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: normal;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+
+    &--primary {
+      background-color: #ffffff;
+      color: #000000;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

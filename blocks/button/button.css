@@ -1,0 +1,15 @@
+.bc-button {
+  display: flex;
+  margin-bottom: 20px;
+}
+.bc-button a {
+  display: block;
+}
+
+.bc-button.alignright {
+  justify-content: flex-end;
+}
+
+.bc-button.aligncenter {
+  justify-content: center;
+}

@@ -1,0 +1,169 @@
+@use "../../assets/scss/variable" as *;
+
+.b-title-fu {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
+  margin: $space-4 0;
+
+  //   max-width: 800px;
+  @media (max-width: $breakpoint-sm) {
+    margin: 40px 0;
+  }
+
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 16px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      gap: 24px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    align-self: stretch;
+
+    img {
+      position: absolute;
+      bottom: -30%;
+      width: 80%;
+      height: 130%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+  &__svgs {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    svg {
+      position: absolute;
+
+      display: block;
+      &:nth-child(1) {
+        top: -10%;
+        right: 10%;
+      }
+      &:nth-child(2) {
+        bottom: 40%;
+        right: 2%;
+      }
+      &:nth-child(3) {
+        top: 10%;
+        right: 60%;
+      }
+    }
+  }
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: $space-6;
+    // max-width: 500px;
+    width: 70%;
+    max-width: 500px;
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+    color: $color-primary;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 14px;
+    }
+  }
+
+  &__title {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: clamp(21px, 3vw, 36px);
+    line-height: 1;
+    color: $color-text;
+    margin: 0;
+    width: 100%;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 24px;
+    }
+  }
+
+  // Alignment variants
+  &.aligncenter {
+    .b-title-fu__wrapper {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .b-title-fu__content {
+      align-items: center;
+    }
+  }
+
+  &.alignright {
+    .b-title-fu__wrapper {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .b-title-fu__content {
+      align-items: flex-end;
+    }
+  }
+
+  &.alignleft {
+    .b-title-fu__wrapper {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .b-title-fu__content {
+      align-items: flex-start;
+    }
+  }
+}
+
+// Admin preview styles
+.acf-block-preview {
+  .b-title-fu {
+    border: 1px dashed rgba($color-primary, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+  }
+}

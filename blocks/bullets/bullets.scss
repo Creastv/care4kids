@@ -1,0 +1,233 @@
+@use "../../assets/scss/variable" as *;
+
+.bullets-container {
+  display: grid;
+  gap: 20px;
+  &.bullets-carousel {
+    // padding: 0 $space-6;
+    position: relative;
+    padding: 0 50px;
+    display: block;
+    @media (max-width: $breakpoint-md) {
+      padding: 0;
+    }
+    .bullets-swiper {
+      position: relative;
+      overflow: hidden;
+      touch-action: pan-x;
+      width: 100%;
+      // padding-bottom: 72px;
+    }
+    .swiper-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      // padding: 10px;
+    }
+    .swiper-slide {
+      height: auto;
+      padding: 10px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .swiper-slide .bullet-item {
+      height: 100%;
+    }
+    .bullets-swiper__pagination {
+      position: absolute;
+      bottom: 24px;
+      left: 15px;
+      right: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: rgba($color-text, 0.2);
+        opacity: 1;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        &.swiper-pagination-bullet-active {
+          background-color: $color-primary;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .bullets-swiper__controls {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      // flex-direction: row-reverse;
+      gap: 12px;
+      z-index: 2;
+      @media (max-width: $breakpoint-md) {
+        display: none;
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: absolute;
+        margin: 0;
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        background-color: #fff;
+        // border: 1px solid rgba($color-primary, 0.4);
+        color: $color-primary;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        &:after {
+          font-size: 18px;
+          font-weight: 700;
+        }
+        &:hover,
+        &:focus-visible {
+          background-color: rgba($color-primary, 0.12);
+          border: 1px solid rgba($color-primary, 0.4);
+          background-color: $color-primary;
+          color: $color-background;
+        }
+      }
+      .swiper-button-prev {
+        left: 0px;
+        right: auto;
+      }
+      .swiper-button-next {
+        right: 0px;
+        left: auto;
+      }
+    }
+    @media (max-width: $breakpoint-md) {
+      .bullets-swiper {
+        padding-bottom: 30px;
+      }
+      .bullets-swiper__controls {
+        position: static;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .bullets-swiper__pagination {
+        bottom: 0px;
+      }
+    }
+  }
+
+  // Dynamiczne klasy dla różnych ilości kolumn
+  &.bullets-columns-1 {
+    grid-template-columns: 1fr;
+  }
+  &.bullets-columns-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  &.bullets-columns-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &.bullets-columns-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  &.bullets-columns-5 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  &.bullets-columns-6 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px;
+    padding: 30px 0;
+  }
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr !important;
+    gap: 10px 0;
+    padding: 30px 0;
+  }
+  &.style-1 {
+    .bullet-item {
+      flex-direction: row;
+      text-align: left;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      .bullet-icon {
+        width: 32px;
+        height: 32px;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .bullet-content {
+        text-align: left;
+      }
+      .bullet-title {
+        padding: 0;
+        margin: 0;
+      }
+      .bullet-description {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .bullet-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    text-align: center;
+    // border: 2px solid $color-background-alt;
+    box-shadow: 0 0 10px 0 rgba($color-text, 0.091);
+    border-radius: 16px;
+    background-color: $color-background;
+
+    @media (max-width: $breakpoint-md) {
+      padding: 5px;
+      gap: 0px;
+    }
+    .bullet-icon {
+      width: auto;
+      height: 40px;
+      margin: 15px 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .bullet-title {
+      color: $color-text;
+      // font-size: 24px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      i {
+        font-style: normal;
+        font-size: 1.25rem;
+        color: $color-primary;
+      }
+    }
+    p {
+      font-size: 14px;
+      // line-height: normal;
+
+      padding: 0;
+      @media (max-width: $breakpoint-md) {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+.bullets-home {
+  background-color: #fff;
+  @media (max-width: $breakpoint-md) {
+    padding: 30px 0;
+  }
+}

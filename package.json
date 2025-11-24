@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production gulp build",
-    "watch": "gulp",
-    "scss": "gulp styles"
+    "build": "NODE_ENV=production npx gulp build",
+    "watch": "npx gulp",
+    "scss": "npx gulp styles",
+    "blocks": "npx gulp blocks"
   },
   "keywords": [],
   "author": "",
@@ -14,11 +15,12 @@
   "devDependencies": {
     "autoprefixer": "^10.4.22",
     "browser-sync": "^3.0.4",
-    "gulp": "^5.0.1",
     "cssnano": "^6.1.2",
+    "gulp": "^5.0.1",
     "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.1.0",
     "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.94.0"
+    "sass": "^1.94.1"
   }
 }

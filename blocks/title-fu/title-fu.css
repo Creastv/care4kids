@@ -1,0 +1,151 @@
+.b-title-fu {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
+  margin: 1rem 0;
+}
+@media (max-width: 768px) {
+  .b-title-fu {
+    margin: 40px 0;
+  }
+}
+.b-title-fu .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .b-title-fu .container {
+    padding: 0 16px;
+  }
+}
+.b-title-fu__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .b-title-fu__wrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .b-title-fu__wrapper {
+    gap: 24px;
+  }
+}
+.b-title-fu__image {
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+  align-self: stretch;
+}
+.b-title-fu__image img {
+  position: absolute;
+  bottom: -30%;
+  width: 80%;
+  height: 130%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.b-title-fu__svgs {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+.b-title-fu__svgs svg {
+  position: absolute;
+  display: block;
+}
+.b-title-fu__svgs svg:nth-child(1) {
+  top: -10%;
+  right: 10%;
+}
+.b-title-fu__svgs svg:nth-child(2) {
+  bottom: 40%;
+  right: 2%;
+}
+.b-title-fu__svgs svg:nth-child(3) {
+  top: 10%;
+  right: 60%;
+}
+.b-title-fu__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 2rem;
+  width: 70%;
+  max-width: 500px;
+}
+@media (max-width: 1024px) {
+  .b-title-fu__content {
+    text-align: center;
+    align-items: center;
+  }
+}
+.b-title-fu__subtitle {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  color: #6262d2;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .b-title-fu__subtitle {
+    font-size: 14px;
+  }
+}
+.b-title-fu__title {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: clamp(21px, 3vw, 36px);
+  line-height: 1;
+  color: #141414;
+  margin: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .b-title-fu__title {
+    font-size: 24px;
+  }
+}
+.b-title-fu.aligncenter .b-title-fu__wrapper {
+  justify-content: center;
+  text-align: center;
+}
+.b-title-fu.aligncenter .b-title-fu__content {
+  align-items: center;
+}
+.b-title-fu.alignright .b-title-fu__wrapper {
+  justify-content: flex-end;
+  text-align: right;
+}
+.b-title-fu.alignright .b-title-fu__content {
+  align-items: flex-end;
+}
+.b-title-fu.alignleft .b-title-fu__wrapper {
+  justify-content: flex-start;
+  text-align: left;
+}
+.b-title-fu.alignleft .b-title-fu__content {
+  align-items: flex-start;
+}
+
+.acf-block-preview .b-title-fu {
+  border: 1px dashed rgba(98, 98, 210, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+}

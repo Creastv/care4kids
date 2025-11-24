@@ -1,0 +1,384 @@
+@use "../../assets/scss/variable" as *;
+
+.b-slider-fu {
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    overflow: visible;
+  }
+
+  &__badges {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; // Ukryj scrollbar domyślnie (Firefox)
+    margin-bottom: 60px;
+    // margin-bottom: $space-4;
+    position: relative;
+    z-index: 10;
+    padding: $space-2 0;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    padding: 10px $space-6;
+    scrollbar-width: thin; // Pokaż scrollbar na hover (Firefox)
+    scrollbar-color: rgba($color-text, 0) transparent;
+    // Pokaż scrollbar na hover
+    transition: all 0.3s ease;
+    &:hover {
+      scrollbar-width: thin; // Pokaż scrollbar na hover (Firefox)
+      scrollbar-color: rgba($color-primary, 0.3) transparent;
+    }
+
+    // Ukryj scrollbar domyślnie dla WebKit (Chrome, Safari, Edge)
+    &::-webkit-scrollbar {
+      height: 6px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+
+    // Pokaż scrollbar na hover dla WebKit
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: rgba($color-text, 0.3);
+
+      &:hover {
+        background-color: rgba($color-text, 0.5);
+      }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      gap: 12px;
+      margin-bottom: $space-6;
+      padding: $space-2 $space-4;
+    }
+  }
+
+  &__badge {
+    background-color: $color-background;
+    border: 1px solid #ededed;
+    border-radius: 60px;
+    padding: 8px 20px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: normal;
+    color: rgba(20, 20, 20, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: 1px solid #ededed;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    &:hover {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    &--active {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 14px;
+      padding: 6px 16px;
+    }
+  }
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+    padding: 0 60px;
+
+    @media (max-width: $breakpoint-md) {
+      padding: 0 50px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 40px;
+    }
+  }
+
+  .b-slider-fu-swiper {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    padding: 0;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    height: auto;
+    transition: transform 0.3s ease;
+    // min-width: 700px; // Center slide is larger
+    &.swiper-slide-active {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+
+    // Side slides are smaller
+    &:not(.swiper-slide-active) {
+      opacity: 0.7;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    // height: 480px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    // align-items: flex-end;
+    background: linear-gradient(135deg, $color-primary 0%);
+
+    @media (max-width: $breakpoint-sm) {
+      height: auto;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__slide-bg {
+    width: 40%;
+    // height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: $breakpoint-sm) {
+      margin: 0 auto;
+    }
+  }
+
+  &__slide-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__slide-content {
+    position: relative;
+    z-index: 2;
+    padding: $space-6 0 $space-6 $space-6;
+    width: 60%;
+    // max-width: 364px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+      padding: $space-4;
+      gap: 8px;
+    }
+  }
+
+  &__slide-title {
+    color: #ffffff;
+    margin: 0;
+  }
+
+  &__slide-desc {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .cpt-feature-hero__overlay {
+    .cpt-feature-hero__overlay__right {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__svgs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  &__svg-left {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    z-index: -1;
+    width: 38px;
+    height: auto;
+  }
+  &__svg-right {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    z-index: 0;
+    width: 60px;
+    height: auto;
+  }
+
+  &__slide-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: #ffffff;
+    border-radius: 60px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: normal;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    align-self: flex-start;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: $breakpoint-md) {
+      padding: 12.26px 24.521px;
+      font-size: 14.01px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+
+  &__slide-icon {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+
+    &--1 {
+      top: 46.83px;
+      right: 10%;
+      transform: rotate(20.386deg);
+
+      @media (max-width: $breakpoint-md) {
+        top: 41.01px;
+        right: 8%;
+      }
+    }
+
+    &--2 {
+      top: 102px;
+      left: 30%;
+
+      @media (max-width: $breakpoint-md) {
+        top: 113.85px;
+        left: 28%;
+      }
+    }
+  }
+
+  &__slide-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__navs {
+    width: 58%;
+    margin: 32px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: $breakpoint-md) {
+      width: 95%;
+      margin-top: 28px;
+      padding: 0 24px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+      padding: 0 $space-4;
+      margin-top: $space-4;
+    }
+  }
+
+  &__nav {
+    position: static;
+    transform: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-text;
+    transition: all 0.3s ease;
+    padding: 0;
+
+    &:hover {
+      color: $color-primary;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $space-5 0;
+  }
+}

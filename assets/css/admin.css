@@ -1,0 +1,357 @@
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Satoshi-Black.otf") format("opentype");
+}
+@font-face {
+  font-family: "Indie Flower";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/IndieFlower-Regular.ttf") format("truetype");
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #141414;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #141414;
+}
+
+.eyebrow {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: rgba(98, 98, 210, 0.2470588235);
+}
+
+h1,
+.h1 {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #141414;
+  font-size: clamp(2.5rem, 2.5rem + (3.5rem - 2.5rem) * (100vw - 576px) / (1440px - 576px), 3.5rem);
+}
+
+h2,
+.h2 {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #141414;
+  font-size: clamp(2rem, 2rem + (3rem - 2rem) * (100vw - 576px) / (1440px - 576px), 3rem);
+}
+
+h3,
+.h3 {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #141414;
+  font-size: clamp(1.75rem, 1.75rem + (2.5rem - 1.75rem) * (100vw - 576px) / (1440px - 576px), 2.5rem);
+}
+
+h4,
+.h4 {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  color: #141414;
+  font-size: clamp(1.5rem, 1.5rem + (2rem - 1.5rem) * (100vw - 576px) / (1440px - 576px), 2rem);
+}
+
+h5,
+.h5 {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  color: #141414;
+  font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  color: #141414;
+  font-size: 1.125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+small,
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: disc outside;
+}
+
+ol {
+  list-style: decimal outside;
+}
+
+blockquote {
+  margin: 0 0 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid rgba(98, 98, 210, 0.2);
+  font-style: italic;
+  color: rgba(20, 20, 20, 0.85);
+}
+
+a {
+  color: #6262d2;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover, a:focus {
+  color: rgba(98, 98, 210, 0.2470588235);
+}
+
+code,
+pre {
+  font-family: "SFMono-Regular", "SFMono", "Roboto Mono", "Fira Code", monospace;
+  font-size: 0.95em;
+  background-color: rgba(241, 245, 249, 0.7);
+  border-radius: 6px;
+}
+
+code {
+  padding: 0.15em 0.4em;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+  font-family: "Indie Flower", "Helvetica Neue", Arial, sans-serif;
+  color: #6262d2;
+}
+
+.main-color {
+  color: #6262d2;
+}
+
+.white-color {
+  color: #fff !important;
+}
+.white-color * {
+  color: #fff !important;
+}
+
+span.logo {
+  background-image: url("../img/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  transform: translate(0px, -3px);
+}
+span.logo--small {
+  width: 80px;
+  height: 24px;
+}
+span.logo--medium {
+  width: 100px;
+  height: 30px;
+}
+span.logo--large {
+  width: 120px;
+  height: 36px;
+}
+span.logo--xlarge {
+  width: 140px;
+  height: 42px;
+}
+span.logo--h2 {
+  width: 213px;
+  height: 58px;
+}
+span.logo--h1 {
+  width: 260px;
+  height: 70px;
+}
+
+@media (max-width: 768px) {
+  blockquote {
+    padding-left: 0.75rem;
+  }
+  ul,
+  ol {
+    margin-left: 1rem;
+  }
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: 3.75rem;
+  background-color: transparent;
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn.is-disabled, .btn[disabled], .btn.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.4);
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.3);
+}
+.btn--primary {
+  background-color: #6262d2;
+  color: #fff;
+  border: 1px solid #6262d2;
+}
+.btn--primary:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.4);
+  color: #fff;
+}
+.btn--primary:hover {
+  background-color: transparent;
+  color: #6262d2;
+  border: 1px solid #6262d2;
+}
+.btn--primary:active {
+  background-color: #6262d2;
+  color: #fff;
+  border: 1px solid #6262d2;
+}
+.btn--primary:focus-visible {
+  box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.4);
+}
+.btn--primary.is-disabled, .btn--primary[disabled], .btn--primary.disabled {
+  background-color: rgba(98, 98, 210, 0.4);
+  color: rgba(20, 20, 20, 0.6);
+  box-shadow: none;
+}
+.btn--white {
+  background-color: #fff;
+  color: #6262d2;
+  border: 1px solid #6262d2;
+}
+.btn--white:hover {
+  background-color: #6262d2;
+  color: #fff;
+  border: 1px solid #6262d2;
+}
+.btn--white:focus-visible {
+  box-shadow: 0 0 0 0.1875rem rgba(98, 98, 210, 0.2);
+}
+.btn--white.is-disabled, .btn--white[disabled], .btn--white.disabled {
+  background-color: rgba(20, 20, 20, 0.2);
+  color: rgba(20, 20, 20, 0.6);
+  box-shadow: none;
+}
+
+ul {
+  margin: 0;
+}
+/*# sourceMappingURL=admin.css.map */

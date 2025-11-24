@@ -1,0 +1,71 @@
+.b-banner-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.b-banner-reviews__wrapper {
+  background: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px 8px 10px;
+  border-radius: 60px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.03);
+}
+.b-banner-reviews__images {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  flex-shrink: 0;
+}
+.b-banner-reviews__image {
+  position: relative;
+  flex-shrink: 0;
+  width: 31px;
+  height: 31px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin-right: -8px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.b-banner-reviews__image:last-child {
+  margin-right: 0;
+}
+.b-banner-reviews__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.b-banner-reviews__text {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  line-height: normal;
+  font-style: normal;
+  flex-shrink: 0;
+  color: #141414;
+  font-size: 14px;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+.b-banner-reviews__text-normal {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+}
+.b-banner-reviews__text-bold {
+  font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+}
+.b-banner-reviews__text-handwritten {
+  font-family: "Indie Flower", "Comic Sans MS", cursive;
+  font-weight: bold;
+  font-size: 18px;
+}

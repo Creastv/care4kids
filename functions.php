@@ -73,6 +73,18 @@ add_action('wp_enqueue_scripts', function () {
     }
 });
 
+add_action('admin_enqueue_scripts', function () {
+    $admin_css = CARE4KIDS_BUILD_DIR . '/css/admin.css';
+    if (file_exists($admin_css)) {
+        wp_enqueue_style(
+            'care4kids-admin',
+            CARE4KIDS_BUILD_URI . '/css/admin.css',
+            [],
+            CARE4KIDS_VERSION
+        );
+    }
+});
+
 add_filter('nav_menu_css_class', function ($classes, $item, $args, $depth) {
     if (($args->theme_location ?? '') !== 'primary') {
         return $classes;
@@ -112,3 +124,18 @@ add_filter('nav_menu_submenu_css_class', function ($classes, $args, $depth) {
 }, 10, 3);
 
 require_once CARE4KIDS_THEME_DIR . '/functions/wp-customization.php';
+require_once CARE4KIDS_THEME_DIR . '/functions/functions.php';
+require_once CARE4KIDS_THEME_DIR . '/functions/colors.php';
+require_once CARE4KIDS_THEME_DIR . '/functions/cpt.php';
+require_once CARE4KIDS_THEME_DIR . '/blocks/blocks.php';
+
+/**
+ * Include pages in search results.
+ *
+ * @param WP_Query $query The WordPress query object.
+ */
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_search()) {
+        $query->set('post_type', ['post', 'page']);
+    }
+});

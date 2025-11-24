@@ -1,0 +1,225 @@
+.b-works {
+  padding: 60px 0;
+}
+.b-works__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  align-items: flex-start;
+}
+@media (max-width: 1024px) {
+  .b-works__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .b-works__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.b-works__grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1024px) {
+  .b-works__grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .b-works__grid--3 {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+.b-works__grid--3 .b-works__item__arrowone {
+  bottom: 20%;
+  position: absolute;
+  right: -40%;
+}
+.b-works__grid--3 .b-works__item__arrowtwo {
+  position: absolute;
+  right: -50%;
+}
+@media (max-width: 1024px) {
+  .b-works__grid--3 .b-works__item__arrowtwo {
+    left: initial;
+    right: -40%;
+    bottom: initial;
+    top: 0%;
+    transform: rotate(0deg);
+  }
+}
+.b-works__grid--3 .b-works__item__arrowtree {
+  display: none;
+}
+.b-works__item {
+  max-width: 280px;
+  margin: 0 auto;
+}
+.b-works__item:nth-child(3n)::after {
+  display: none;
+}
+.b-works__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.b-works__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.b-works__icon {
+  max-width: 80px;
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.b-works__icon-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.b-works__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #6262d2;
+  font-family: "Indie Flower", sans-serif;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 1;
+  flex-shrink: 0;
+  position: absolute;
+  transform: translate(120%, -70%);
+  z-index: 2;
+  opacity: 0.4;
+}
+@media (max-width: 1024px) {
+  .b-works__number {
+    transform: translate(100%, 0%);
+  }
+}
+.b-works__number span {
+  color: #6262d2;
+}
+.b-works svg {
+  max-width: 80%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .b-works svg {
+    display: none;
+  }
+}
+.b-works__item__arrowone {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+}
+@media (max-width: 1024px) {
+  .b-works__item__arrowone {
+    bottom: 60%;
+    right: -51%;
+  }
+}
+.b-works__item__arrowtwo {
+  position: absolute;
+  top: 0px;
+  right: -100px;
+}
+@media (max-width: 1024px) {
+  .b-works__item__arrowtwo {
+    top: initial;
+    bottom: -30%;
+    right: initial;
+    left: -40%;
+    transform: rotate(122deg);
+  }
+}
+.b-works__item__arrowtree {
+  position: absolute;
+  bottom: -20px;
+  right: -100px;
+}
+@media (max-width: 1440px) {
+  .b-works__item__arrowtree {
+    right: -40px;
+    bottom: -40px;
+  }
+}
+@media (max-width: 1024px) {
+  .b-works__item__arrowtree {
+    bottom: 10%;
+    right: initial;
+    right: -40%;
+  }
+}
+.b-works__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  margin-top: 8px;
+}
+.b-works__title {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #141414;
+  margin: 0;
+  width: 100%;
+}
+.b-works__desc {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(20, 20, 20, 0.8);
+  margin: 0;
+  max-width: 100%;
+}
+
+.acf-block-preview .b-works {
+  border: 1px solid #6262d2;
+  padding: 20px;
+  width: 100%;
+  left: initial;
+  margin-left: initial;
+  margin-top: 50px !important;
+}
+.acf-block-preview .b-works:before {
+  content: "How it works";
+  color: #ffffff;
+  padding: 3px 10px;
+  font-size: 12px;
+  background-color: #6262d2;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.acf-block-preview .b-works svg {
+  display: none;
+}
+.acf-block-preview .b-works .b-works__number {
+  font-size: 60px;
+  transform: translate(120%, 0%);
+}

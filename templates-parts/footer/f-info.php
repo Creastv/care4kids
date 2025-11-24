@@ -1,7 +1,7 @@
 <div class="site-footer__bottom">
-    <div class="grid footer-grid ">
+    <div class="grid footer-grid grid-middle grid-spaceBetween grid-sm-center ">
 
-        <div class="col footer-info-copyright">
+        <div class="col col-sm-12 footer-info-copyright">
             <p> © Copyright <?php echo esc_html(date_i18n('Y')); ?> Wszelkie prawa zastrzeżone | Projekt i wykonanie
                 <a href="https://roial.pl/" target="_blank" rel="nofollow">
                     <svg width="35" height="19" viewBox="0 0 35 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,10 +20,10 @@
                 </a>
             </p>
         </div>
-        <div class="col">
+        <div class="col col-sm-12">
             <?php get_template_part('templates-parts/extras/e-social-media'); ?>
         </div>
-        <div class="col footer-info-menu ">
+        <div class="col col-sm-12 footer-info-menu ">
             <?php
             if (has_nav_menu('footer_info')) {
                 wp_nav_menu([

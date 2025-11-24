@@ -9,19 +9,20 @@ global $wp_query;
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-    <div class="container-inner">
-        <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <header class="entry-header">
-                    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-                </header>
 
-                <div class="entry-content">
-                    <?php the_content(); ?>
-                </div>
-            </article>
+
+<main id="primary" class="site-main">
+    <div class="container">
+        <?php while (have_posts()) : ?>
+        <?php the_post(); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+            <?php get_template_part('templates-parts/header/h', 'title'); ?>
+
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
+        </article>
         <?php endwhile; ?>
     </div>
 </main>

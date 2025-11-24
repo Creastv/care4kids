@@ -1,0 +1,151 @@
+@use "./variable" as *;
+// Funkcje hero header (CPT)
+.cpt-feature-hero {
+  //   margin: clamp($space-6, 5vw, $space-8) 0 $space-7;
+  color: #fff;
+
+  &__card {
+    background-color: $color-primary;
+    position: relative;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    // padding: clamp($space-6, 5vw, $space-8);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $space-6;
+    // box-shadow: 0 30px 80px rgba($color-primary, 0.35);
+    // min-height: 420px;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    // max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    padding: $space-6;
+    width: 60%;
+  }
+  &__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 2vw + 2rem, 3.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+  }
+
+  &__description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    // line-height: 1.7;
+
+    p {
+      margin-bottom: $space-3;
+    }
+  }
+
+  &__image-wrapper {
+    // max-width: 420px;
+    width: 40%;
+    min-height: 350px;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    // max-height: 400px;
+
+    img {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: auto;
+      height: 100%;
+      //   height: 300px;
+      //   object-fit: cover;
+      //   object-position: top;
+      border-radius: 1.75rem;
+    }
+  }
+  &__svgs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &__svg-left {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    z-index: -1;
+  }
+  &__svg-right {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    z-index: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  &__overlay__left {
+    position: absolute;
+    top: -100px;
+    left: -40%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  &__overlay__right {
+    position: absolute;
+    top: 0;
+    right: -10%;
+    z-index: 0;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    // margin-top: $space-5;
+
+    &__card {
+      border-radius: 1.5rem;
+      //   flex-direction: column;
+      gap: $space-4;
+    }
+    &__content {
+      width: 80%;
+    }
+    &__image-wrapper {
+      width: 20%;
+      min-height: 200px;
+      img {
+        right: 0;
+        left: auto;
+        transform: translateX(0);
+      }
+    }
+    &__svgs {
+      display: none;
+    }
+    &__overlay__left {
+      display: none;
+    }
+  }
+}
+
+.p-relative {
+  position: relative;
+  iframe {
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,141 @@
+@use "../../assets/scss/variable" as *;
+// @use "../../assets/scss/typo" as typo;
+
+.acf-block-preview {
+  .group-container {
+    width: 100% !important;
+    left: 0px !important;
+    margin-left: 0 !important;
+    .container-fluid {
+      display: block;
+      border: 1px solid $color-background-alt;
+      padding: 20px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.b-sticky-con {
+  //   position: relative;
+  //   width: 100vw;
+  //   margin-left: -50vw;
+  //   left: 50%;
+  // Preview mode styling
+  .acf-block-preview & {
+    border: 1px solid $color-primary;
+    padding: 20px;
+    margin-top: 20px;
+
+    &:before {
+      content: "sticky sidebar";
+      color: $color-background;
+      padding: 3px 10px;
+      font-size: 12px;
+      background-color: $color-primary;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  //   .b-sticky-con__wraper {
+  //     display: flex;
+  //     flex-direction: row-reverse;
+  //     align-items: stretch;
+  //     gap: $space-8;
+  //     @media (max-width: $breakpoint-lg) {
+  //       gap: 50px;
+  //     }
+  //     @media (max-width: $breakpoint-md) {
+  //       flex-wrap: wrap;
+  //     }
+  //     .col-1 {
+  //       &:nth-child(2) {
+  //         width: 25%;
+  //         order: 1;
+  //         @media (max-width: $breakpoint-md) {
+  //           width: 100%;
+  //         }
+  //       }
+  //       &:nth-child(1) {
+  //         width: 75%;
+  //         order: 2;
+  //         @media (max-width: $breakpoint-md) {
+  //           width: 100%;
+  //         }
+  //       }
+  //     }
+  //   }
+}
+
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  background-color: $color-background;
+  padding: $space-4;
+  border-radius: 10px;
+  background-color: rgba($color-primary, 0.04);
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        position: relative;
+        display: block;
+        width: 100%;
+        a {
+          display: block;
+          font-size: 16px;
+          line-height: 1.5;
+          margin-bottom: $space-4;
+          text-decoration: none;
+          color: $color-text;
+          &:hover {
+            font-weight: 700;
+          }
+        }
+      }
+      .active {
+        position: relative;
+        padding-left: $space-4;
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          background-image: url(../../assets/img/corner-mark.png);
+          width: $space-4;
+          height: $space-4;
+          top: -$space-1;
+          left: $space-1;
+        }
+        a {
+          font-weight: 700;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.acf-block-preview .b-sticky-con {
+  border: 1px solid $color-primary;
+  padding: 20px;
+  width: 100%;
+  left: initial;
+  margin-left: initial;
+  margin-top: 50px !important;
+  &:before {
+    content: "Sticky sidebar";
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 12px;
+    background-color: $color-primary;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

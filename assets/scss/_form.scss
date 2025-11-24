@@ -1,0 +1,537 @@
+@use "./variable" as *;
+@use "./typo" as typo;
+
+// Contact Form 7 Styles
+.contact-form-wrapper {
+  width: 100%;
+}
+
+.contact-form-container {
+  background: $color-background;
+  border: 1px solid #ededed;
+  border-radius: 20px;
+  padding: 24px 32px 32px;
+  width: 100%;
+}
+
+.contact-form-title {
+  font-family: typo.$font-family-heading;
+  font-weight: typo.$font-weight-bold;
+  font-size: 20px;
+  line-height: 1.4;
+  color: $color-text;
+  margin: 0 0 24px;
+}
+
+.contact-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+  p {
+    margin-bottom: 0;
+  }
+  br {
+    display: none;
+  }
+}
+
+.contact-form-fields .wpcf7-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.wpcf7-form-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.wpcf7-form-group--half {
+  flex: 1;
+  min-width: 0;
+}
+
+// Labels
+.wpcf7-form-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: typo.$font-family-base;
+  font-weight: typo.$font-weight-medium;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba($color-text, 0.8);
+
+  span {
+    white-space: pre;
+  }
+}
+
+// Form Controls
+.wpcf7-form-control-wrap {
+  width: 100%;
+}
+
+// Text Inputs and Textarea
+.wpcf7-form-control[type="text"],
+.wpcf7-form-control[type="email"],
+.wpcf7-form-control[type="tel"],
+.wpcf7-textarea {
+  width: 100%;
+  background: $color-background;
+  border: 1px solid #ededed;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-family: typo.$font-family-base;
+  font-weight: typo.$font-weight-medium;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-text;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: rgba($color-text, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+  }
+
+  &::-webkit-input-placeholder {
+    color: rgba($color-text, 0.4);
+  }
+
+  &::-moz-placeholder {
+    color: rgba($color-text, 0.4);
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: rgba($color-text, 0.4);
+  }
+}
+
+.wpcf7-textarea {
+  height: 100px;
+  resize: vertical;
+  font-family: typo.$font-family-base;
+}
+
+// Radio Buttons
+.wpcf7-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  min-height: 8px;
+
+  @media (max-width: $breakpoint-sm) {
+    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wpcf7-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 16.667px;
+      height: 16.667px;
+      border: 1.667px solid rgba($color-text, 0.4);
+      border-radius: 50%;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      margin: 0;
+      flex-shrink: 0;
+      transition: border-color 0.2s ease;
+
+      &:checked {
+        border-color: $color-primary;
+        background: transparent;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 8.333px;
+          height: 8.333px;
+          background: $color-primary;
+          border-radius: 50%;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+      }
+    }
+
+    .wpcf7-list-item-label {
+      font-family: typo.$font-family-base;
+      font-weight: typo.$font-weight-medium;
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba($color-text, 0.4);
+      white-space: pre;
+      user-select: none;
+    }
+
+    input[type="radio"]:checked ~ .wpcf7-list-item-label,
+    input[type="radio"]:checked + .wpcf7-list-item-label {
+      color: $color-text;
+    }
+  }
+}
+
+// Checkbox / Acceptance
+.wpcf7-acceptance,
+.wpcf7-form-control-wrap .wpcf7-acceptance,
+.wpcf7-form-control-wrap.acceptance-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    margin: 0;
+    font-family: typo.$font-family-base;
+    font-weight: typo.$font-weight-medium;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba($color-text, 0.8);
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba($color-text, 0.4);
+    border-radius: 4px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+
+    &:checked {
+      background: $color-primary;
+      border-color: $color-primary;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+    }
+  }
+}
+
+// Legacy checkbox support
+.wpcf7-checkbox {
+  display: flex;
+  // align-items: flex-start;
+  gap: 8px;
+
+  .wpcf7-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0;
+
+    label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+      margin: 0;
+      font-family: typo.$font-family-base;
+      font-weight: typo.$font-weight-medium;
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba($color-text, 0.8);
+    }
+    .wpcf7-form-control-wrap {
+      width: initial;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba($color-text, 0.4);
+      border-radius: 4px;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      margin: 0;
+      flex-shrink: 0;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+      &:checked {
+        background: $color-primary;
+        border-color: $color-primary;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          width: 4px;
+          height: 8px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+      }
+    }
+
+    .wpcf7-list-item-label {
+      user-select: none;
+    }
+  }
+}
+
+// Submit Button
+.wpcf7-form-submit {
+  width: 100%;
+  margin-top: 0;
+  position: relative;
+  p {
+    margin-bottom: 0;
+  }
+  .wpcf7-spinner {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition: tr;
+    transform: translate(0px, -50%);
+  }
+  .btn--primary {
+    width: 100%;
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    padding: 14px 28px;
+    font-family: typo.$font-family-base;
+    font-weight: typo.$font-weight-bold;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: rgba($color-primary, 0.8);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.4);
+    }
+
+    &:disabled {
+      // background-color: rgba($color-primary, 0.4);
+      // color: rgba(20, 20, 20, 0.6);
+      cursor: not-allowed;
+      // transform: none;
+    }
+  }
+}
+
+// Animation for appearing messages
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Response Output Container ([response] tag)
+.wpcf7-response-output {
+  border: none !important;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin: 20px 0 0;
+  font-size: 14px;
+  font-weight: typo.$font-weight-medium;
+  font-family: typo.$font-family-base;
+  line-height: 1.6;
+  width: 100%;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease,
+    color 0.3s ease;
+  animation: fadeInUp 0.3s ease-out;
+
+  // Default state (neutral/info)
+  background-color: rgba($color-primary, 0.1);
+  color: $color-primary;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Validation Messages
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ok,
+.wpcf7-mail-sent-ng,
+.wpcf7-spam,
+.wpcf7-validation-errors,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-aborted {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin: 20px 0 0;
+  font-size: 14px;
+  font-weight: typo.$font-weight-medium;
+  font-family: typo.$font-family-base;
+  line-height: 1.6;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.wpcf7-mail-sent-ok {
+  background-color: rgba($color-success, 0.1);
+  color: $color-success;
+}
+
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ng,
+div.wpcf7-aborted {
+  background-color: rgba($color-error, 0.1);
+  color: $color-error;
+}
+
+.wpcf7-spam {
+  background-color: rgba($color-warning, 0.1);
+  color: $color-warning;
+}
+
+// Response output with specific status classes
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+  background-color: rgba($color-success, 0.1);
+  color: $color-success;
+}
+
+.wpcf7-response-output.wpcf7-validation-errors,
+.wpcf7-response-output.wpcf7-mail-sent-ng,
+.wpcf7-response-output.wpcf7-aborted {
+  background-color: rgba($color-error, 0.1);
+  color: $color-error;
+}
+
+.wpcf7-response-output.wpcf7-spam {
+  background-color: rgba($color-warning, 0.1);
+  color: $color-warning;
+}
+
+// Initial/inactive state (hidden or empty)
+.wpcf7-response-output.wpcf7-display-none {
+  display: none !important;
+}
+
+// When form is submitting or sent
+.wpcf7-form.sent .wpcf7-response-output,
+.wpcf7-form.submitting .wpcf7-response-output {
+  display: block;
+}
+
+// Position response output within form container
+.contact-form-container {
+  .wpcf7-response-output {
+    margin-top: 24px;
+  }
+}
+
+// Error styles for individual fields
+.wpcf7-not-valid-tip {
+  font-size: 12px;
+  color: $color-error;
+  margin-top: 4px;
+  font-weight: typo.$font-weight-medium;
+}
+
+.wpcf7-form-control.wpcf7-not-valid {
+  border-color: $color-error;
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-sm) {
+  .contact-form-container {
+    padding: 20px 24px 28px;
+    border-radius: 16px;
+  }
+
+  .contact-form-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form-fields {
+    gap: 20px;
+  }
+}

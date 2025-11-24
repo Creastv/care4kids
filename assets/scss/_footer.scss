@@ -5,6 +5,10 @@
   .footer-grid {
     margin: 0 auto;
     justify-content: space-between;
+    @media (max-width: $breakpoint-sm) {
+      justify-content: center;
+      gap: $space-4;
+    }
   }
   .footer-brand {
     max-width: 500px;
@@ -64,6 +68,9 @@
     line-height: 1.2;
     color: $color-text;
     text-decoration: none;
+    @media (max-width: $breakpoint-sm) {
+      text-align: center;
+    }
     a {
       color: $color-text;
       text-decoration: none;
