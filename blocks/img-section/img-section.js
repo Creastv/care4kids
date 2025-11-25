@@ -51,15 +51,15 @@
                 
                 // Parallax for background image - moves slower (deeper layer)
                 gsap.fromTo(bgElement, {
-                    y: 0
+                    y: 0,
                 }, {
-                    y: -50,
+                    y: -60,
                     // ease: 'none',
                     scrollTrigger: {
                         trigger: section,
                         start: ' bottom',
                         end: 'top',
-                        scrub: 15,
+                        scrub: 5,
                         invalidateOnRefresh: true,
                         id: 'img-section-bg-' + index,
                         // markers: true // Set to true for debugging
@@ -72,22 +72,29 @@
                 // Reset position first to prevent accumulation
                 gsap.set(frontElement, { y: 0 });
                 
-                // Parallax for front image - moves faster (closer layer)
-                gsap.fromTo(frontElement, {
-                    y: 0
-                }, {
-                    y: 80,
-                    ease: 'none',
+                // Timeline: push image up until the section center reaches viewport center,
+                // then bring it back down while leaving the viewport.
+                const frontTimeline = gsap.timeline({
                     scrollTrigger: {
                         trigger: section,
-                        start: ' bottom',
-                        end: '200px',
+                        start: 'top bottom',
+                        end: 'bottom top',
                         scrub: 1,
                         invalidateOnRefresh: true,
                         id: 'img-section-front-' + index,
                         // markers: true // Set to true for debugging
                     }
                 });
+                
+                frontTimeline
+                    .to(frontElement, {
+                        y: 70,
+                        ease: 'none'
+                    })
+                    .to(frontElement, {
+                        y: 100,
+                        ease: 'none'
+                    });
             }
         }
         
