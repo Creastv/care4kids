@@ -44,6 +44,11 @@
   width: 30%;
   align-self: stretch;
 }
+@media (max-width: 1024px) {
+  .b-title-fu__image {
+    display: none;
+  }
+}
 @media (max-width: 576px) {
   .b-title-fu__image {
     width: 20%;
@@ -53,13 +58,19 @@
   position: absolute;
   bottom: -30%;
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   height: 130%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
   display: block;
+  left: 10%;
+}
+@media (max-width: 1024px) {
+  .b-title-fu__image img {
+    left: 0;
+  }
 }
 @media (max-width: 576px) {
   .b-title-fu__image img {
@@ -77,6 +88,11 @@
   right: 0;
   width: 50%;
   height: 100%;
+}
+@media (max-width: 1024px) {
+  .b-title-fu__svgs {
+    display: none;
+  }
 }
 .b-title-fu__svgs svg {
   position: absolute;

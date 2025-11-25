@@ -43,6 +43,9 @@
     overflow: hidden;
     width: 30%;
     align-self: stretch;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
     @media (max-width: $breakpoint-xs) {
       width: 20%;
     }
@@ -51,11 +54,15 @@
       position: absolute;
       bottom: -30%;
       width: 100%;
-      max-width: 300px;
+      max-width: 200px;
       height: 130%;
-      object-fit: cover;
-      object-position: center;
+      object-fit: contain;
+      object-position: bottom;
       display: block;
+      left: 10%;
+      @media (max-width: $breakpoint-md) {
+        left: 0;
+      }
 
       @media (max-width: $breakpoint-xs) {
         // height: 50%;
@@ -73,6 +80,9 @@
     right: 0;
     width: 50%;
     height: 100%;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
     svg {
       position: absolute;
 

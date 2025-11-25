@@ -3,11 +3,11 @@ $nav = get_field('navigacja');
 ?>
 <div class="b-sticky-con">
     <div class="grid">
-        <div class="col col-9_lg-9_md-9_sm-8_xs-12 ">
+        <div class="col col-9_lg-9_md-8_sm-12_xs-12 ">
             <InnerBlocks />
         </div>
         <?php if ($nav) { ?>
-        <div class="col col-3_lg-3_md-3_sm-4_xs-12 ">
+        <div class="col col-3_lg-3_md-4_sm-12_xs-12 ">
             <div class="sticky-nav">
                 <h4><?php echo esc_html('Spis treści'); ?></h4>
                 <nav>

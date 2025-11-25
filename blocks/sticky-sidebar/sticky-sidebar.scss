@@ -77,7 +77,7 @@
   border-radius: 10px;
   background-color: rgba($color-primary, 0.04);
   @media (max-width: $breakpoint-md) {
-    display: none;
+    // display: none;
   }
   nav {
     ul {

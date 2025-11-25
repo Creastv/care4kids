@@ -34,11 +34,6 @@
   border-radius: 10px;
   background-color: rgba(98, 98, 210, 0.04);
 }
-@media (max-width: 1024px) {
-  .sticky-nav {
-    display: none;
-  }
-}
 .sticky-nav nav ul {
   list-style: none;
   padding: 0;
