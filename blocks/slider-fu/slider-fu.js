@@ -28,8 +28,8 @@
       speed: 600,
       centeredSlides: true,
       loop: true,
-      loopedSlides: 3, // Liczba slajdów do sklonowania dla loop (ważne dla centeredSlides)
-      loopAdditionalSlides: 2, // Dodatkowe slajdy do sklonowania
+      // loopedSlides: 6, // Liczba slajdów do sklonowania dla loop (ważne dla centeredSlides)
+      // loopAdditionalSlides: 1, // Dodatkowe slajdy do sklonowania
       allowTouchMove: true,
       grabCursor: true,
       simulateTouch: true,
