@@ -205,6 +205,12 @@ ul {
 ol {
   list-style: decimal outside;
 }
+li {
+  // margin: 0 0 $space-5;
+  font-size: $font-size-base;
+  line-height: $line-height-regular;
+  font-weight: $font-weight-normal;
+}
 
 blockquote {
   margin: 0 0 $space-6;
