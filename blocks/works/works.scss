@@ -166,6 +166,9 @@
     @media (max-width: $breakpoint-md) {
       transform: translate(100%, 0%);
     }
+    @media (max-width: $breakpoint-sm) {
+      font-size: 80px;
+    }
     span {
       color: $color-primary;
     }

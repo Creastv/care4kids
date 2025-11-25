@@ -36,7 +36,7 @@
       observer: true,
       breakpoints: {
         640: {
-          slidesPerView: 1.2,
+          slidesPerView: 1,
           spaceBetween: 20,
         },
         768: {
@@ -48,11 +48,11 @@
           spaceBetween: 24,
         },
         1280: {
-          slidesPerView: 3.2,
+          slidesPerView: 3.3,
           spaceBetween: 30,
         },
         1440: {
-          slidesPerView: 3.2,
+          slidesPerView: 3.1,
           spaceBetween: 30,
         },
       },

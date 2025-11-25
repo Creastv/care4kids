@@ -38,6 +38,12 @@
   &.is-sticky.is-hidden {
     transform: translateY(-100%);
   }
+
+  .site-header__inner > .header-buttons {
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
 }
 
 .header-brand {
@@ -168,6 +174,10 @@
     transition: transform 0.3s ease;
   }
 
+  &__panel-actions {
+    display: none;
+  }
+
   &__toggle {
     border-radius: 999px;
     background: transparent;
@@ -230,7 +240,7 @@
 
   @media (max-width: $breakpoint-md) {
     justify-content: flex-end;
-    margin-top: $space-3;
+    // margin-top: $space-3;
 
     &__toggle {
       display: inline-flex;
@@ -277,6 +287,25 @@
     &__link {
       justify-content: flex-start;
       width: 100%;
+    }
+
+    &__panel-actions {
+      display: block;
+      margin-top: $space-5;
+
+      .header-buttons {
+        flex: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: $space-3;
+        margin: 0;
+
+        a {
+          width: 100%;
+          text-align: center;
+        }
+      }
     }
 
     &.is-open {

@@ -31,5 +31,8 @@ $breakpoint_xl  = 1200;
             ]
         );
         ?>
+        <div class="header-nav__panel-actions">
+            <?php get_template_part('templates-parts/header/h', 'buttons'); ?>
+        </div>
     </div>
 </nav>

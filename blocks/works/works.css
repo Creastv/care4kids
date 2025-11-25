@@ -115,6 +115,11 @@
     transform: translate(100%, 0%);
   }
 }
+@media (max-width: 768px) {
+  .b-works__number {
+    font-size: 80px;
+  }
+}
 .b-works__number span {
   color: #6262d2;
 }

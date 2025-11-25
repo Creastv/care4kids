@@ -135,10 +135,15 @@
 
   @media (max-width: $breakpoint-lg) {
     grid-template-columns: 1fr 1fr !important;
-    gap: 20px;
+    gap: 16px;
     padding: 30px 0;
   }
   @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px;
+    padding: 30px 0;
+  }
+  @media (max-width: $breakpoint-sm) {
     grid-template-columns: 1fr !important;
     gap: 10px 0;
     padding: 30px 0;

@@ -19,7 +19,7 @@
     overflow: visible;
     width: 100%;
     padding: 0;
-    margin: 0 -15px;
+    // margin: 0 -15px;
 
     @media (min-width: 1280px) {
       margin: 0;
@@ -50,7 +50,8 @@
     flex-direction: column;
     background-color: $color-background;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba($color-text, 0.08);
+    // box-shadow: 0 4px 20px rgba($color-text, 0.08);
+    box-shadow: 0 0 10px 0 hsla(0, 0%, 8%, 0.091);
     padding: $space-6;
     height: 100%;
     width: 100%;
