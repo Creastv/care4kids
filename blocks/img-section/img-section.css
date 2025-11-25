@@ -61,6 +61,7 @@
 @media (max-width: 768px) {
   .b-img-section__bg {
     width: 50%;
+    max-width: 200px;
   }
 }
 .b-img-section__bg img {
@@ -74,6 +75,12 @@
 @media (max-width: 768px) {
   .b-img-section__bg img {
     width: 100%;
+    right: 10%;
+  }
+}
+@media (max-width: 576px) {
+  .b-img-section__bg img {
+    right: 0;
   }
 }
 .b-img-section__front {
@@ -91,6 +98,13 @@
 @media (max-width: 768px) {
   .b-img-section__front {
     width: 75%;
+    max-width: 270px;
+    left: 10%;
+  }
+}
+@media (max-width: 576px) {
+  .b-img-section__front {
+    left: 0;
   }
 }
 .b-img-section__front img {
