@@ -54,6 +54,7 @@
 @media (max-width: 768px) {
   .b-banner__image img {
     left: 0;
+    top: 70px;
     width: 100%;
   }
 }

@@ -2153,13 +2153,28 @@ span.logo--h1 {
 .site-footer .footer-brand {
   max-width: 500px;
 }
+@media (max-width: 768px) {
+  .site-footer .footer-brand {
+    margin-bottom: 16px;
+  }
+}
 .site-footer .footer-brand .footer-brand__logo {
   display: block;
   margin-bottom: 0.75rem;
 }
+@media (max-width: 768px) {
+  .site-footer .footer-navs {
+    width: 100%;
+  }
+}
 .site-footer .footer-navs .footer-navs__grid {
   justify-content: space-between;
   gap: 4rem;
+}
+@media (max-width: 768px) {
+  .site-footer .footer-navs .footer-navs__grid {
+    margin: 0;
+  }
 }
 .site-footer .footer-navs .footer-navs__group {
   max-width: 300px;

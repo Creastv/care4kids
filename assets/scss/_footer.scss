@@ -12,15 +12,24 @@
   }
   .footer-brand {
     max-width: 500px;
+    @media (max-width: $breakpoint-sm) {
+      margin-bottom: 16px;
+    }
     .footer-brand__logo {
       display: block;
       margin-bottom: $space-3;
     }
   }
   .footer-navs {
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+    }
     .footer-navs__grid {
       justify-content: space-between;
       gap: $space-8;
+      @media (max-width: $breakpoint-sm) {
+        margin: 0;
+      }
     }
     .footer-navs__group {
       max-width: 300px;

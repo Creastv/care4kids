@@ -41,6 +41,11 @@
   margin-bottom: 1rem;
   padding: 0.75rem 1rem;
 }
+@media (max-width: 768px) {
+  .faq .accordion {
+    padding: 0;
+  }
+}
 .faq .accordion .question {
   font-size: 1.25em;
   line-height: 1.625em;
