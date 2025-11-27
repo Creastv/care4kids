@@ -1673,7 +1673,7 @@ em.union {
   display: inline-block;
   vertical-align: middle;
   font-size: 0;
-  transform: translate(-18px, -10px);
+  transform: translate(-20px, -15px);
 }
 
 em.union--right {

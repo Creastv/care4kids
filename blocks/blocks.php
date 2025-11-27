@@ -313,6 +313,28 @@ function register_acf_block_types()
         },
     ));
     acf_register_block_type(array(
+        'name'              => 'ornament',
+        'title'             => __('Ornament'),
+        'render_template'   => 'blocks/ornament/ornament.php',
+        'category'          => 'formatting',
+        'icon' => array(
+            'background' => '#0e4194',
+            'foreground' => '#fff',
+            'src' => 'ellipsis',
+        ),
+        'mode'            => 'preview',
+        'keywords'          => array('ornament'),
+        'supports' => array('align' => true),
+        'enqueue_assets'    => function () {
+            wp_enqueue_style('go-ornament',  get_template_directory_uri() . '/blocks/ornament/ornament.min.css');
+            // Enqueue GSAP from CDN
+            wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', [], '3.12.5', true);
+            wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', ['gsap'], '3.12.5', true);
+            // Enqueue ornament script
+            wp_enqueue_script('go-ornament-js', get_template_directory_uri() . '/blocks/ornament/ornament.js', ['gsap', 'gsap-scrolltrigger'], '1.0.0', true);
+        },
+    ));
+    acf_register_block_type(array(
         'name'              => 'hero',
         'title'             => __('Hero'),
         'render_template'   => 'blocks/hero/hero.php',
