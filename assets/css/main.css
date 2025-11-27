@@ -1658,6 +1658,29 @@ span.logo {
   transform: translate(0px, -3px);
 }
 
+span.logo-revers {
+  background-image: url("../img/logo-revers.svg") !important;
+}
+
+em.union {
+  position: absolute;
+  width: 36px;
+  height: 27px;
+  background-image: url("../img/union.svg") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  transform: translate(-18px, -10px);
+}
+
+em.union--right {
+  transform: translate(-10px, -10px);
+  background-image: url("../img/union-rev.svg") !important;
+}
+
 h1,
 .h1 {
   font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;

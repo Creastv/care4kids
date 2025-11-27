@@ -21,20 +21,20 @@ $buttons = get_field('buttons');
     <div class="b-banner__container">
         <div class="b-banner__content">
             <?php if ($title || $desc): ?>
-            <div class="b-banner__text">
-                <?php if ($title): ?>
-                <h2 class="b-banner__title"><?php echo $title; ?></h2>
-                <?php endif; ?>
+                <div class="b-banner__text">
+                    <?php if ($title): ?>
+                        <h2 class="b-banner__title"><?php echo $title; ?></h2>
+                    <?php endif; ?>
 
-                <?php if ($desc): ?>
-                <p class="b-banner__desc"><?php echo esc_html($desc); ?></p>
-                <?php endif; ?>
-            </div>
+                    <?php if ($desc): ?>
+                        <p class="b-banner__desc"><?php echo $desc; ?></p>
+                    <?php endif; ?>
+                </div>
             <?php endif; ?>
 
             <?php if (!empty($buttons)): ?>
-            <div class="b-banner__buttons">
-                <?php
+                <div class="b-banner__buttons">
+                    <?php
                     $button_index = 0;
                     foreach ($buttons as $button_row):
                         $link = $button_row['link'] ?? [];
@@ -51,18 +51,18 @@ $buttons = get_field('buttons');
                         }
                         $button_index++;
                     ?>
-                <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($target); ?>"
-                    class="<?php echo esc_attr($button_class); ?>">
-                    <?php echo esc_html($link['title']); ?>
-                </a>
-                <?php endforeach; ?>
-            </div>
+                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($target); ?>"
+                            class="<?php echo esc_attr($button_class); ?>">
+                            <?php echo esc_html($link['title']); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
             <?php endif; ?>
         </div>
         <?php if ($kv): ?>
-        <div class="b-banner__image">
-            <?php echo wp_get_attachment_image($kv, 'full', false, ['class' => 'b-banner__image-img']); ?>
-        </div>
+            <div class="b-banner__image">
+                <?php echo wp_get_attachment_image($kv, 'full', false, ['class' => 'b-banner__image-img']); ?>
+            </div>
         <?php endif; ?>
     </div>
     <svg class="b-banner__ornament" width="858" height="609" viewBox="0 0 858 609" fill="none"
