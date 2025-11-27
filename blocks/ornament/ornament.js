@@ -54,7 +54,7 @@
                         trigger: section,
                         start: 'top bottom',
                         end: 'bottom top',
-                        scrub: 2,
+                        scrub: 20,
                         invalidateOnRefresh: true,
                         id: 'ornament-' + index,
                         // markers: true // Set to true for debugging
