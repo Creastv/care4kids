@@ -74,6 +74,17 @@
           color: $color-text;
         }
       }
+      span.logo {
+        height: 30px;
+        width: 105px;
+        transform: translate(0px, -3px);
+
+        @media (max-width: $breakpoint-sm) {
+          height: 26px;
+          width: 94px;
+          transform: translate(0px, -3px);
+        }
+      }
       svg {
         position: absolute;
         right: 15px;

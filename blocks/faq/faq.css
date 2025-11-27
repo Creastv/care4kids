@@ -79,6 +79,18 @@
   font-size: 1.375em !important;
   color: #141414;
 }
+.faq .accordion .question span.logo {
+  height: 30px;
+  width: 105px;
+  transform: translate(0px, -3px);
+}
+@media (max-width: 768px) {
+  .faq .accordion .question span.logo {
+    height: 26px;
+    width: 94px;
+    transform: translate(0px, -3px);
+  }
+}
 .faq .accordion .question svg {
   position: absolute;
   right: 15px;
