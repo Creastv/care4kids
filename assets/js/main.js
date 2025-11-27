@@ -84,16 +84,30 @@
     let lastScrollTop = 0;
     let ticking = false;
     const scrollThreshold = 100; // Minimum scroll distance before header becomes sticky
+    let headerHeight = header.offsetHeight; // Initial height measurement
+
+    const updateBodyPadding = (isSticky) => {
+      if (isSticky) {
+        document.body.style.paddingTop = `${headerHeight}px`;
+      } else {
+        document.body.style.paddingTop = "";
+      }
+    };
 
     const updateHeader = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const isCurrentlySticky = header.classList.contains("is-sticky");
 
       if (scrollTop < scrollThreshold) {
         // At the top of the page
         header.classList.remove("is-sticky", "is-hidden");
+        updateBodyPadding(false);
       } else {
         // Scrolled down
-        header.classList.add("is-sticky");
+        if (!isCurrentlySticky) {
+          header.classList.add("is-sticky");
+          updateBodyPadding(true);
+        }
 
         if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
           // Scrolling down
@@ -114,6 +128,25 @@
         ticking = true;
       }
     };
+
+    // Handle window resize to update header height
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        // Measure header height (temporarily remove sticky if needed)
+        const wasSticky = header.classList.contains("is-sticky");
+        if (wasSticky) {
+          header.classList.remove("is-sticky");
+          document.body.style.paddingTop = "";
+        }
+        headerHeight = header.offsetHeight;
+        if (wasSticky) {
+          header.classList.add("is-sticky");
+          updateBodyPadding(true);
+        }
+      }, 150);
+    });
 
     window.addEventListener("scroll", handleScroll, { passive: true });
   };

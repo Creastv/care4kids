@@ -1605,13 +1605,13 @@ body.search .no-results .page-content p {
   src: url("../fonts/IndieFlower-Regular.ttf") format("truetype");
 }
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body {
   font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.3;
   color: #141414;
   background-color: #ffffff;
@@ -1622,9 +1622,13 @@ body {
 
 p {
   margin: 0 0 1.5rem;
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.3;
   font-weight: 400;
+}
+p span.logo {
+  width: 92px;
+  height: 26px;
 }
 
 .lead {
@@ -1643,6 +1647,17 @@ p {
   color: rgba(98, 98, 210, 0.2470588235);
 }
 
+span.logo {
+  background-image: url("../img/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  transform: translate(0px, -3px);
+}
+
 h1,
 .h1 {
   font-family: "Satoshi", "Helvetica Neue", Arial, sans-serif;
@@ -1651,6 +1666,18 @@ h1,
   margin: 0 0 1rem;
   color: #141414;
   font-size: clamp(2.5rem, 2.5rem + (3.5rem - 2.5rem) * (100vw - 576px) / (1440px - 576px), 3.5rem);
+}
+h1 span.logo,
+.h1 span.logo {
+  width: 260px;
+  height: 70px;
+}
+@media (max-width: 768px) {
+  h1 span.logo,
+  .h1 span.logo {
+    width: 200px;
+    height: 60px;
+  }
 }
 
 h2,
@@ -1662,6 +1689,19 @@ h2,
   color: #141414;
   font-size: clamp(2rem, 2rem + (3rem - 2rem) * (100vw - 576px) / (1440px - 576px), 3rem);
 }
+h2 span.logo,
+.h2 span.logo {
+  width: 233px;
+  height: 64px;
+  transform: translate(0px, -5px);
+}
+@media (max-width: 768px) {
+  h2 span.logo,
+  .h2 span.logo {
+    width: 165px;
+    height: 46px;
+  }
+}
 
 h3,
 .h3 {
@@ -1671,6 +1711,19 @@ h3,
   margin: 0 0 1rem;
   color: #141414;
   font-size: clamp(1.75rem, 1.75rem + (2.5rem - 1.75rem) * (100vw - 576px) / (1440px - 576px), 2.5rem);
+}
+h3 span.logo,
+.h3 span.logo {
+  width: 197px;
+  height: 55px;
+  transform: translate(0px, -5px);
+}
+@media (max-width: 768px) {
+  h3 span.logo,
+  .h3 span.logo {
+    width: 142px;
+    height: 38px;
+  }
 }
 
 h4,
@@ -1801,41 +1854,6 @@ em {
 }
 .white-color * {
   color: #fff !important;
-}
-
-span.logo {
-  background-image: url("../img/logo.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 0;
-  transform: translate(0px, -3px);
-}
-span.logo--small {
-  width: 80px;
-  height: 24px;
-}
-span.logo--medium {
-  width: 100px;
-  height: 30px;
-}
-span.logo--large {
-  width: 120px;
-  height: 36px;
-}
-span.logo--xlarge {
-  width: 140px;
-  height: 42px;
-}
-span.logo--h2 {
-  width: 213px;
-  height: 58px;
-}
-span.logo--h1 {
-  width: 260px;
-  height: 70px;
 }
 
 @media (max-width: 768px) {

@@ -181,7 +181,7 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 16px;
 }
 @media (max-width: 768px) {
   .b-slider-fu__slide-content {
@@ -193,17 +193,14 @@
 .b-slider-fu__slide-title {
   color: #ffffff;
   margin: 0;
+  margin-bottom: 0px;
 }
 .b-slider-fu__slide-desc {
-  font-family: "Satoshi", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
 }
 .b-slider-fu__slide-desc p {
-  margin-bottom: 0;
+  font-weight: 600;
 }
 .b-slider-fu .cpt-feature-hero__overlay .cpt-feature-hero__overlay__right {
   position: absolute;

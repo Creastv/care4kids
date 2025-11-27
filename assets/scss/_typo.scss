@@ -62,7 +62,7 @@ $line-height-tight: 1.1;
 $line-height-regular: 1.3;
 $line-height-relaxed: 1.5;
 
-$font-size-root: 16px;
+$font-size-root: 18px;
 $font-size-base: 1rem;
 $font-size-sm: 0.875rem;
 $font-size-xs: 0.75rem;
@@ -100,7 +100,7 @@ html {
 body {
   font-family: $font-family-base;
   font-weight: $font-weight-light;
-  font-size: $font-size-base;
+  font-size: $font-size-root;
   line-height: $line-height-regular;
   color: $color-text;
   background-color: $color-background;
@@ -111,9 +111,17 @@ body {
 
 p {
   margin: 0 0 $space-5;
-  font-size: $font-size-base;
+  font-size: $font-size-root;
   line-height: $line-height-regular;
   font-weight: $font-weight-normal;
+  span.logo {
+    width: 92px;
+    height: 26px;
+    // @media (max-width: $breakpoint-sm) {
+    //   width: 200px;
+    //   height: 60px;
+    // }
+  }
 }
 
 .lead {
@@ -132,22 +140,60 @@ p {
   color: $color-secondary;
 }
 
+span.logo {
+  background-image: url("../img/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: inline-block;
+  vertical-align: middle;
+  // margin-right: 10px;
+  font-size: 0;
+  transform: translate(0px, -3px);
+}
 h1,
 .h1 {
   @include heading-style($font-weight-bold);
   @include fluid-type(2.5rem, 3.5rem);
+  span.logo {
+    width: 260px;
+    height: 70px;
+    @media (max-width: $breakpoint-sm) {
+      width: 200px;
+      height: 60px;
+    }
+  }
 }
 
 h2,
 .h2 {
   @include heading-style($font-weight-bold);
   @include fluid-type(2rem, 3rem);
+  span.logo {
+    width: 233px;
+    height: 64px;
+    transform: translate(0px, -5px);
+    @media (max-width: $breakpoint-sm) {
+      width: 165px;
+      height: 46px;
+    }
+  }
 }
 
 h3,
 .h3 {
   @include heading-style($font-weight-bold);
   @include fluid-type(1.75rem, 2.5rem);
+  span.logo {
+    width: 197px;
+    height: 55px;
+    transform: translate(0px, -5px);
+    @media (max-width: $breakpoint-sm) {
+      width: 142px;
+      height: 38px;
+    }
+  }
 }
 
 h4,
@@ -268,42 +314,42 @@ em {
     color: #fff !important;
   }
 }
-span.logo {
-  background-image: url("../img/logo.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+// span.logo {
+//   background-image: url("../img/logo.svg");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
 
-  display: inline-block;
-  vertical-align: middle;
-  // margin-right: 10px;
-  font-size: 0;
-  transform: translate(0px, -3px);
-  &--small {
-    width: 80px;
-    height: 24px;
-  }
-  &--medium {
-    width: 100px;
-    height: 30px;
-  }
-  &--large {
-    width: 120px;
-    height: 36px;
-  }
-  &--xlarge {
-    width: 140px;
-    height: 42px;
-  }
-  &--h2 {
-    width: 213px;
-    height: 58px;
-  }
-  &--h1 {
-    width: 260px;
-    height: 70px;
-  }
-}
+//   display: inline-block;
+//   vertical-align: middle;
+//   // margin-right: 10px;
+//   font-size: 0;
+//   transform: translate(0px, -3px);
+//   &--small {
+//     width: 80px;
+//     height: 24px;
+//   }
+//   &--medium {
+//     width: 100px;
+//     height: 30px;
+//   }
+//   &--large {
+//     width: 120px;
+//     height: 36px;
+//   }
+//   &--xlarge {
+//     width: 140px;
+//     height: 42px;
+//   }
+//   &--h2 {
+//     width: 213px;
+//     height: 58px;
+//   }
+//   &--h1 {
+//     width: 260px;
+//     height: 70px;
+//   }
+// }
 @media (max-width: $breakpoint-sm) {
   blockquote {
     padding-left: $space-3;

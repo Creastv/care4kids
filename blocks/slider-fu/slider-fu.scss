@@ -203,7 +203,7 @@
     // max-width: 364px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 16px;
     @media (max-width: $breakpoint-sm) {
       width: 100%;
       padding: $space-4;
@@ -214,18 +214,21 @@
   &__slide-title {
     color: #ffffff;
     margin: 0;
+    margin-bottom: 0px;
+    // font-size: 28px;
   }
 
   &__slide-desc {
-    font-family: "Satoshi", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
+    // font-family: "Satoshi", sans-serif;
+    // font-weight: 600;
+    // font-size: 16px;
+    // line-height: 1.5;
     color: rgba(255, 255, 255, 0.8);
     margin: 0;
 
     p {
-      margin-bottom: 0;
+      // margin-bottom: 0;
+      font-weight: 600;
     }
   }
   .cpt-feature-hero__overlay {
