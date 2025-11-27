@@ -1,0 +1,327 @@
+@use "../../assets/scss/variable" as *;
+
+.hero {
+  position: relative;
+  //   padding: 0 50px;
+  &__inner {
+    position: relative;
+    z-index: 1;
+    background-color: $color-primary;
+    border-radius: 20px;
+    overflow: hidden;
+    // margin-left: 100px;
+    // margin-right: 100px;
+    // max-height: 500px;
+  }
+  &__bg {
+    position: relative;
+    // min-height: 600px;
+    // width: 42%;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__image {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    // height: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  &__svgs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    svg {
+      &:nth-child(1) {
+        position: absolute;
+        top: 120px;
+        left: 10%;
+        width: 200px;
+        height: auto;
+        z-index: 1;
+        @media (max-width: $breakpoint-lg) {
+          width: 130px;
+          left: 3%;
+        }
+        @media (max-width: $breakpoint-md) {
+          width: 150px;
+          left: 3%;
+        }
+        @media (max-width: $breakpoint-sm) {
+          width: 100px;
+          left: 1%;
+        }
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        position: absolute;
+        bottom: 50px;
+        left: 20%;
+        width: 75px;
+        height: auto;
+        z-index: 1;
+        @media (max-width: $breakpoint-lg) {
+          width: 75px;
+          left: 5%;
+        }
+        @media (max-width: $breakpoint-md) {
+          width: 50px;
+          left: 3%;
+        }
+        @media (max-width: $breakpoint-sm) {
+          width: 50px;
+          left: 5%;
+          bottom: 70px;
+        }
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+      &:nth-child(3) {
+        position: absolute;
+        top: 100px;
+        right: 20%;
+        width: 120px;
+        height: auto;
+        z-index: 1;
+        @media (max-width: $breakpoint-lg) {
+          width: 100px;
+          right: 3%;
+        }
+        @media (max-width: $breakpoint-md) {
+          width: 100px;
+          right: 3%;
+        }
+        @media (max-width: $breakpoint-sm) {
+          width: 100px;
+          right: 5%;
+        }
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+      &:nth-child(4) {
+        position: absolute;
+        bottom: 40%;
+        right: 15%;
+        width: 10%;
+        height: auto;
+        z-index: 1;
+        @media (max-width: $breakpoint-sm) {
+          width: 50px;
+          right: 10%;
+        }
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+      &:nth-child(5) {
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+        width: 3%;
+        height: auto;
+        z-index: 1;
+        @media (max-width: $breakpoint-sm) {
+          width: 50px;
+        }
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__conture {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 100%;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+  &__types {
+    position: absolute;
+    z-index: 9;
+    top: 20%;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 300px;
+    @media (max-width: $breakpoint-sm) {
+      top: 60%;
+      // transform: translhateY(0);
+      height: 40%;
+    }
+  }
+  &__type__left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+  }
+  &__type__right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+  }
+  &__type {
+    position: absolute;
+    display: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $color-text;
+    text-align: center;
+    line-height: 1.2;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    // white-space: nowrap;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+    @media (max-width: $breakpoint-sm) {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+    @media (max-width: $breakpoint-xs) {
+      font-size: 0.6rem;
+      padding: 5px 10px;
+    }
+    // Slot positions for left column (align to right side)
+    .hero__type__left & {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 15px;
+        right: -7.5px;
+        height: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        transform: translateY(-50%) rotate(45deg);
+        pointer-events: none;
+        z-index: -1;
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+      right: 20%;
+      @media (max-width: $breakpoint-sm) {
+        right: 10%;
+      }
+      @media (max-width: $breakpoint-xs) {
+        right: 20px;
+      }
+      &:nth-child(1) {
+        top: 25%;
+        transform: translateX(-30px);
+        @media (max-width: $breakpoint-xs) {
+          transform: translateX(0);
+        }
+      }
+      &:nth-child(2) {
+        top: 45%;
+      }
+      &:nth-child(3) {
+        top: 65%;
+        transform: translateX(-10px);
+        @media (max-width: $breakpoint-xs) {
+          transform: translateX(0);
+        }
+      }
+      &:nth-child(4) {
+        top: 80%;
+        transform: translateX(-20px);
+        @media (max-width: $breakpoint-xs) {
+          transform: translateX(0);
+        }
+      }
+      &:nth-child(5) {
+        top: 0%;
+      }
+    }
+
+    // Slot positions for right column (align to left side)
+    .hero__type__right & {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 15px;
+        left: -7.5px;
+        height: 15px;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        transform: translateY(-50%) rotate(45deg);
+        pointer-events: none;
+        z-index: -1;
+        @media (max-width: $breakpoint-xs) {
+          display: none;
+        }
+      }
+      left: 20%;
+      @media (max-width: $breakpoint-sm) {
+        right: 10%;
+      }
+      @media (max-width: $breakpoint-xs) {
+        left: 20px;
+      }
+      &:nth-child(1) {
+        top: 25%;
+        transform: translateX(30px);
+        @media (max-width: $breakpoint-xs) {
+          transform: translateX(0);
+        }
+      }
+      &:nth-child(2) {
+        top: 45%;
+      }
+      &:nth-child(3) {
+        top: 65%;
+        transform: translateX(50px);
+        @media (max-width: $breakpoint-xs) {
+          transform: translateX(0);
+        }
+      }
+      &:nth-child(4) {
+        top: 80%;
+      }
+      &:nth-child(5) {
+        top: 0%;
+      }
+    }
+  }
+}

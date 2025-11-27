@@ -313,6 +313,28 @@ function register_acf_block_types()
         },
     ));
     acf_register_block_type(array(
+        'name'              => 'hero',
+        'title'             => __('Hero'),
+        'render_template'   => 'blocks/hero/hero.php',
+        'category'          => 'formatting',
+        'icon' => array(
+            'background' => '#0e4194',
+            'foreground' => '#fff',
+            'src' => 'ellipsis',
+        ),
+        'mode'            => 'preview',
+        'keywords'          => array('heronction', 'function', 'slider'),
+        'supports' => array('align' => true),
+        'enqueue_assets'    => function () {
+            wp_enqueue_style('go-hero',  get_template_directory_uri() . '/blocks/hero/hero.min.css');
+            // Enqueue GSAP from CDN
+            wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', [], '3.12.5', true);
+            wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', ['gsap'], '3.12.5', true);
+            // Enqueue hero script
+            wp_enqueue_script('go-hero-js', get_template_directory_uri() . '/blocks/hero/hero.js', ['gsap', 'gsap-scrolltrigger'], '1.0.0', true);
+        },
+    ));
+    acf_register_block_type(array(
         'name'              => 'image',
         'title'             => __('Zdjęcie'),
         'render_template'   => 'blocks/image/image.php',
