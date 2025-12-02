@@ -2,10 +2,9 @@
 
 .b-title-fu {
   position: relative;
+  z-index: -1;
   width: 100%;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
-  margin: $space-4 0;
+  margin: $space-8 0;
 
   //   max-width: 800px;
   @media (max-width: $breakpoint-sm) {
@@ -28,7 +27,32 @@
     justify-content: space-between;
     gap: 40px;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      border-radius: 20px;
+
+      background: linear-gradient(90deg, #e4e4ff, #7777e5 94.73%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @media (max-width: $breakpoint-sm) {
+        background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
+      }
+      // background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+    }
     @media (max-width: $breakpoint-sm) {
       gap: 24px;
     }
@@ -40,7 +64,7 @@
 
   &__image {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     width: 30%;
     align-self: stretch;
     @media (max-width: $breakpoint-md) {
@@ -52,16 +76,17 @@
 
     img {
       position: absolute;
-      bottom: -30%;
+      z-index: 0;
+      bottom: 0;
       width: 100%;
       max-width: 200px;
-      height: 130%;
+      height: 140%;
       object-fit: contain;
-      object-position: bottom;
+      object-position: centerbottom;
       display: block;
-      left: 10%;
-      @media (max-width: $breakpoint-md) {
-        left: 0;
+      left: 15%;
+      @media (max-width: $breakpoint-lg) {
+        left: 0%;
       }
 
       @media (max-width: $breakpoint-xs) {
@@ -75,6 +100,7 @@
   }
   &__svgs {
     position: absolute;
+    z-index: -1;
     overflow: hidden;
     top: 0;
     right: 0;
@@ -135,7 +161,7 @@
 
   &__subtitle {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 21px;
     line-height: 1;
     color: $color-primary;
     margin: 0;
@@ -143,7 +169,7 @@
     text-transform: uppercase;
 
     @media (max-width: $breakpoint-sm) {
-      font-size: 14px;
+      font-size: 18px;
     }
   }
 

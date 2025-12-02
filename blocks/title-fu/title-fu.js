@@ -43,12 +43,8 @@
                 // Reset position first to prevent accumulation
                 gsap.set(imageElement, { y: 0 });
                 
-                // Parallax for image - moves up on scroll
-                gsap.fromTo(imageElement, {
-                    y: 0
-                }, {
-                    y: -50,
-                    ease: 'none',
+                // Parallax for image - returns to original position (y: 0) at center of page
+                const imageTimeline = gsap.timeline({
                     scrollTrigger: {
                         trigger: section,
                         start: 'top bottom',
@@ -59,6 +55,21 @@
                         // markers: true // Set to true for debugging
                     }
                 });
+                
+                // Animation: starts at -50, reaches 0 at center (50% progress), continues to 50
+                imageTimeline
+                    .fromTo(imageElement, {
+                        y:0
+                    }, {
+                        y: 30,
+                        ease: 'none',
+                        duration: 1
+                    })
+                    .to(imageElement, {
+                        y: 0,
+                        ease: 'none',
+                        duration: 1
+                    });
             }
             
             // Parallax for all SVG elements - same effect for all

@@ -1,9 +1,8 @@
 .b-title-fu {
   position: relative;
+  z-index: -1;
   width: 100%;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
-  margin: 1rem 0;
+  margin: 4rem 0;
 }
 @media (max-width: 768px) {
   .b-title-fu {
@@ -26,7 +25,31 @@
   justify-content: space-between;
   gap: 40px;
   width: 100%;
-  overflow: hidden;
+}
+.b-title-fu__wrapper:before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #e4e4ff, #7777e5 94.73%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .b-title-fu__wrapper:before {
+    background: linear-gradient(90deg, #f9f9fd 0%, #f3f2ff 59.73%);
+  }
+}
+.b-title-fu__wrapper:after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
 }
 @media (max-width: 768px) {
   .b-title-fu__wrapper {
@@ -40,7 +63,6 @@
 }
 .b-title-fu__image {
   position: relative;
-  overflow: hidden;
   width: 30%;
   align-self: stretch;
 }
@@ -56,20 +78,21 @@
 }
 .b-title-fu__image img {
   position: absolute;
-  bottom: -30%;
+  z-index: 0;
+  bottom: 0;
   width: 100%;
   max-width: 200px;
-  height: 130%;
+  height: 140%;
   -o-object-fit: contain;
      object-fit: contain;
-  -o-object-position: bottom;
-     object-position: bottom;
+  -o-object-position: centerbottom;
+     object-position: centerbottom;
   display: block;
-  left: 10%;
+  left: 15%;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .b-title-fu__image img {
-    left: 0;
+    left: 0%;
   }
 }
 @media (max-width: 576px) {
@@ -83,6 +106,7 @@
 }
 .b-title-fu__svgs {
   position: absolute;
+  z-index: -1;
   overflow: hidden;
   top: 0;
   right: 0;
@@ -149,7 +173,7 @@
 }
 .b-title-fu__subtitle {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1;
   color: #6262d2;
   margin: 0;
@@ -158,7 +182,7 @@
 }
 @media (max-width: 768px) {
   .b-title-fu__subtitle {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 .b-title-fu__title {
