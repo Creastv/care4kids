@@ -12,6 +12,7 @@ if (!empty($block['anchor'])) {
 }
 
 $steps = get_field('steps');
+$columns = get_field('columns') ?: '4'; // Default to 3 columns
 
 if (empty($steps)) {
     if (is_admin()) {
@@ -19,11 +20,14 @@ if (empty($steps)) {
     }
     return;
 }
+
+$grid_class = 'b-steps__grid';
+$grid_class .= ' b-steps__grid--columns-' . esc_attr($columns);
 ?>
 
 <section class="<?php echo esc_attr($class_name); ?>" <?php echo $anchor; ?>>
     <div class="container">
-        <div class="b-steps__grid">
+        <div class="<?php echo esc_attr($grid_class); ?>">
             <?php foreach ($steps as $index => $step): ?>
             <?php
                 $number = $step['number'] ?? '';
@@ -51,21 +55,22 @@ if (empty($steps)) {
                             <p class="b-steps__desc"><?php echo esc_html($desc); ?></p>
                             <?php endif; ?>
                         </div>
-                    </div>
 
-                    <?php if (!empty($link['url']) && !empty($link['title'])): ?>
-                    <?php
+
+                        <?php if (!empty($link['url']) && !empty($link['title'])): ?>
+                        <?php
                             $target = !empty($link['target']) ? $link['target'] : '_self';
                             $button_class = 'b-steps__button btn btn--white';
                             if ($is_first) {
                                 $button_class .= ' btn--primary';
                             }
                             ?>
-                    <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($target); ?>"
-                        class="<?php echo esc_attr($button_class); ?>">
-                        <?php echo esc_html($link['title']); ?>
-                    </a>
-                    <?php endif; ?>
+                        <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($target); ?>"
+                            class="<?php echo esc_attr($button_class); ?>">
+                            <?php echo esc_html($link['title']); ?>
+                        </a>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </article>
             <?php endforeach; ?>

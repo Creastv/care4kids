@@ -2,19 +2,47 @@
 
 .b-steps {
   //   padding: 60px 0;
+  // margin-bottom: $space-8;
+  // @media (max-width: $breakpoint-sm) {
+  //   margin-bottom: $space-6;
+  // }
+  // @media (max-width: $breakpoint-xs) {
+  //   margin-bottom: $space-4;
+  // }
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 32px;
     align-items: flex-start;
+
+    // Default: 3 columns
+    &--columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--columns-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--columns-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &--columns-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    // Fallback if no class specified
+    &:not([class*="--columns-"]) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__item {
     position: relative;
-    min-height: 414px;
+    // min-height: 414px;
 
-    // Connecting line between steps (desktop only, 3-column layout)
+    // Connecting line between steps (desktop only)
     &:not(:last-child)::after {
       content: "";
       position: absolute;
@@ -26,11 +54,23 @@
       pointer-events: none;
       z-index: 0;
     }
+  }
 
-    // Hide connecting line on last item in row (when grid wraps)
-    &:nth-child(3n)::after {
-      display: none;
-    }
+  // Hide connecting line on last item in row (when grid wraps)
+  &__grid--columns-2 &__item:nth-child(2n)::after {
+    display: none;
+  }
+
+  &__grid--columns-3 &__item:nth-child(3n)::after {
+    display: none;
+  }
+
+  &__grid--columns-4 &__item:nth-child(4n)::after {
+    display: none;
+  }
+
+  &__grid--columns-5 &__item:nth-child(5n)::after {
+    display: none;
   }
 
   &__content {
@@ -38,7 +78,7 @@
     flex-direction: column;
     gap: 0;
     height: 100%;
-    min-height: 330px;
+    // min-height: 330px;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -175,7 +215,7 @@
 
     &__grid {
       // grid-template-columns: 1fr;
-      gap: 0;
+      gap: 10px;
     }
 
     &__item {
