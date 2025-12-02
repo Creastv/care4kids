@@ -125,13 +125,16 @@
   white-space: nowrap;
   border: none;
   cursor: pointer;
+  border: 1px solid transparent;
 }
 .b-banner__button--primary {
   background-color: #ffffff;
   color: #000000;
 }
 .b-banner__button--primary:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #fff;
   transform: translateY(-2px);
 }
 .b-banner__button--secondary {
@@ -142,4 +145,5 @@
 .b-banner__button--secondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+  color: #fff;
 }

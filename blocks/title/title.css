@@ -21,7 +21,7 @@
 }
 .bc-title .bc-title__subtitle {
   color: #6262d2 !important;
-  font-size: 28px;
+  font-size: 31px;
   margin-bottom: 10px;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -40,29 +40,26 @@
     font-size: 1em;
   }
 }
-.bc-title .btn-outline-primary {
+.bc-title .bc-title__description .btn-outline-primary {
   padding: 8px 20px;
   flex-grow: 1;
   flex: auto;
   text-align: center;
 }
-
-.bc-title.aligncenter {
+.bc-title .bc-title.aligncenter {
   text-align: center;
   max-width: 992px;
   margin: 30px auto;
 }
 @media (max-width: 768px) {
-  .bc-title.aligncenter {
+  .bc-title .bc-title.aligncenter {
     margin: 0 auto;
   }
 }
-
-.bc-title.alignright {
+.bc-title .bc-title.alignright {
   text-align: right;
 }
-
-.bc-title.alignleft.has-link {
+.bc-title .bc-title.alignleft.has-link {
   width: 100%;
   display: flex !important;
   align-items: flex-end;
@@ -71,27 +68,24 @@
   margin-bottom: 0px;
 }
 @media (max-width: 1024px) {
-  .bc-title.alignleft.has-link {
+  .bc-title .bc-title.alignleft.has-link {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 10px;
   }
 }
-.bc-title.alignleft.has-link p {
+.bc-title .bc-title.alignleft.has-link p {
   margin-bottom: 0px;
 }
-
-.bc-title.alignleft.has-link .has-link-content {
+.bc-title .bc-title.alignleft.has-link .has-link-content {
   text-align: left;
   width: 100%;
   max-width: 992px;
 }
-
-.bc-title.alignleft {
+.bc-title .bc-title.alignleft {
   text-align: left;
 }
-
-.no-margin * {
+.bc-title .no-margin * {
   margin: 0px !important;
 }

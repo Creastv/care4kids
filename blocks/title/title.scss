@@ -20,7 +20,7 @@
   }
   .bc-title__subtitle {
     color: $color-primary !important;
-    font-size: 28px;
+    font-size: 31px;
     margin-bottom: 10px;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -35,56 +35,57 @@
     @media (max-width: $breakpoint-sm) {
       font-size: 1em;
     }
-  }
-  .btn-outline-primary {
-    padding: 8px 20px;
-    flex-grow: 1;
-    flex: auto;
-    text-align: center;
-  }
-}
-.bc-title.aligncenter {
-  text-align: center;
-  max-width: 992px;
-  margin: 30px auto;
-  @media (max-width: $breakpoint-sm) {
-    margin: 0 auto;
-  }
-}
-.bc-title.alignright {
-  text-align: right;
-}
-.bc-title.alignleft.has-link {
-  width: 100%;
-  display: flex !important;
-  align-items: flex-end;
-  gap: 30px;
-  justify-content: space-between;
-  margin-bottom: 0px;
-  @media (max-width: $breakpoint-md) {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  p {
-    margin-bottom: 0px;
-  }
-}
-.bc-title.alignleft.has-link {
-  .has-link-content {
-    text-align: left;
-    width: 100%;
-    max-width: 992px;
-    // margin: 0 auto;
-  }
-}
-.bc-title.alignleft {
-  text-align: left;
-}
 
-.no-margin {
-  * {
-    margin: 0px !important;
+    .btn-outline-primary {
+      padding: 8px 20px;
+      flex-grow: 1;
+      flex: auto;
+      text-align: center;
+    }
+  }
+  .bc-title.aligncenter {
+    text-align: center;
+    max-width: 992px;
+    margin: 30px auto;
+    @media (max-width: $breakpoint-sm) {
+      margin: 0 auto;
+    }
+  }
+  .bc-title.alignright {
+    text-align: right;
+  }
+  .bc-title.alignleft.has-link {
+    width: 100%;
+    display: flex !important;
+    align-items: flex-end;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    p {
+      margin-bottom: 0px;
+    }
+  }
+  .bc-title.alignleft.has-link {
+    .has-link-content {
+      text-align: left;
+      width: 100%;
+      max-width: 992px;
+      // margin: 0 auto;
+    }
+  }
+  .bc-title.alignleft {
+    text-align: left;
+  }
+
+  .no-margin {
+    * {
+      margin: 0px !important;
+    }
   }
 }
