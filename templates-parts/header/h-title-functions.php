@@ -42,10 +42,10 @@ if (!$image_id && has_post_thumbnail($post_id)) {
     $image_id = get_post_thumbnail_id($post_id);
 }
 
-$image_src = $image_id ? wp_get_attachment_image_url($image_id, 'large') : CARE4KIDS_ASSETS_URI . '/img/logo.svg';
+$image_src = $image_id ? wp_get_attachment_image_url($image_id, 'large') : null;
 $image_alt = $image_id
     ? get_post_meta($image_id, '_wp_attachment_image_alt', true)
-    : get_bloginfo('name');
+    : null;
 
 $background_color = get_field('funkcja_hero_background', $post_id);
 if (!$background_color) {
@@ -66,18 +66,18 @@ $section_id = 'funkcja-hero-' . $post_id;
             style="--hero-base: <?php echo esc_attr($background_color); ?>; --hero-accent: <?php echo esc_attr($highlight_color); ?>;">
             <div class="cpt-feature-hero__content">
 
-                <h1 class="cpt-feature-hero__title" id="funkcja-hero-title">
+                <h1 class="cpt-feature-hero__title h2" id="funkcja-hero-title">
                     <?php echo esc_html($title_primary); ?>
 
                     <?php if ($title_suffix) : ?>
-                    <em class="white-color"><?php echo esc_html($title_suffix); ?></em>
+                        <em class="white-color"><?php echo esc_html($title_suffix); ?></em>
                     <?php endif; ?>
                 </h1>
 
                 <?php if ($description_markup) : ?>
-                <div class="cpt-feature-hero__description">
-                    <?php echo wp_kses_post($description_markup); ?>
-                </div>
+                    <div class="cpt-feature-hero__description">
+                        <?php echo wp_kses_post($description_markup); ?>
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="cpt-feature-hero__image-wrapper">

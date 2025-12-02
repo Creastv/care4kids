@@ -1,7 +1,7 @@
 @use "../../assets/scss/variable" as *;
 
 .b-slider-fu {
-  padding: 30px 0;
+  padding: 50px 0;
   position: relative;
   overflow: hidden;
 
@@ -138,6 +138,7 @@
     // transition: transform 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
     // min-width: 700px; // Center slide is larger
+    opacity: 1;
     &.swiper-slide-active {
       transform: scale(1.1);
       z-index: 2;
@@ -148,7 +149,7 @@
 
     // Side slides are smaller
     &:not(.swiper-slide-active) {
-      opacity: 1;
+      opacity: 0.5;
     }
   }
 
@@ -178,11 +179,13 @@
   &__slide-bg {
     width: 40%;
     // height: 100%;
+    height: 400px;
     z-index: 1;
     overflow: hidden;
     position: relative;
     @media (max-width: $breakpoint-sm) {
       margin: 0 auto;
+      height: 300px;
       width: 50%;
       overflow: initial;
     }
@@ -191,7 +194,8 @@
   &__slide-bg-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center bottom;
     display: block;
   }
 
@@ -276,7 +280,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 28px;
+    padding: 8px 24px;
     background-color: #ffffff;
     border-radius: 60px;
     font-family: "Satoshi", sans-serif;
